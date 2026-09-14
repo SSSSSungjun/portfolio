@@ -17,7 +17,6 @@
 
   <div class="portfolio-shell">
     <aside class="side-panel" aria-label="Portfolio sections">
-      <p class="toc-title">CONTENTS</p>
       <nav class="section-nav">
         <a class="active" href="#profile">Profile</a>
         <a href="#bike-book">Bike - book</a>
@@ -29,20 +28,21 @@
     </aside>
 
     <main class="portfolio-content">
-      <section id="profile" class="folio-page cover-page observed-section">
-        <div class="cover-copy">
-          <p class="page-kicker">ANDROID DEVELOPER PORTFOLIO</p>
-          <h1>화면을 만드는 데서 끝나지 않고,<br />동작하는 이유까지 설계합니다.</h1>
-          <p class="cover-intro">
-            Kotlin과 Jetpack Compose 기반 Android 개발을 중심으로,
-            네트워크·데이터 처리와 Java·Spring Boot 백엔드까지 함께 경험했습니다.
-            기능을 구현할 때는 실패 상황과 데이터 흐름, 이후의 변경 가능성까지 생각하려고 합니다.
+      <section id="profile" class="folio-page profile-page observed-section">
+        <div class="profile-main">
+          <p class="page-kicker">ANDROID DEVELOPER</p>
+          <h1>윤성준</h1>
+          <p class="profile-role">Android Developer</p>
+          <p class="profile-intro">
+            Kotlin과 Jetpack Compose 기반 Android 개발을 중심으로 경험을 쌓았습니다.
+            화면 구현에 그치지 않고 네트워크, 로컬 데이터, 서버와의 계약까지 연결해
+            기능이 실제로 어떻게 동작하고 실패하는지 함께 보려고 합니다.
           </p>
 
-          <div class="focus-row">
-            <div><span>01</span><strong>Android</strong><p>앱 구조와 상태 흐름</p></div>
-            <div><span>02</span><strong>Data Flow</strong><p>네트워크·저장·동시성</p></div>
-            <div><span>03</span><strong>Verification</strong><p>실패 복구·부하 검증</p></div>
+          <div class="profile-focus">
+            <div><span>FOCUS 01</span><strong>Android Architecture</strong><p>화면과 데이터 계층의 책임을 나누고 변경 범위를 줄이는 구조</p></div>
+            <div><span>FOCUS 02</span><strong>Data Flow</strong><p>네트워크·로컬 저장·서버 데이터가 이어지는 흐름</p></div>
+            <div><span>FOCUS 03</span><strong>Failure & Verification</strong><p>실패 복구, 동시성, 부하 테스트처럼 실제 사용에서 생기는 문제</p></div>
           </div>
         </div>
 
@@ -52,206 +52,297 @@
             <small>추후 본인 사진으로 교체</small>
           </div>
         </div>
-
         <p class="page-number">01</p>
       </section>
 
-      <section id="bike-book" class="folio-page project-page observed-section">
-        <header class="project-head">
+      <section id="bike-book" class="folio-page project-overview-page observed-section">
+        <header class="project-title-row">
           <div>
-            <p class="page-kicker">PROJECT 01 · ANDROID / BACKEND</p>
+            <p class="page-kicker">PROJECT 01 · 2026.07 — 08</p>
             <h2>Bike - book</h2>
-            <p>사내 공용 자전거의 신청·승인·이용·반납 흐름을 관리하는 서비스</p>
+            <p class="project-subtitle">사내 공용 자전거의 신청·승인·이용·반납 흐름을 관리하는 Android·Backend 서비스</p>
           </div>
-          <div class="role-box"><span>ROLE</span><strong>Android & Backend</strong><small>기술 설계 및 구현</small></div>
+          <dl class="project-meta">
+            <div><dt>Role</dt><dd>Android & Backend</dd></div>
+            <div><dt>Focus</dt><dd>운영 환경 · 실패 복구 · 데이터 정합성</dd></div>
+          </dl>
         </header>
 
-        <div class="hero-grid">
-          <div class="visual-placeholder"><strong>MAIN UI / FLOW</strong><span>대표 화면 또는 서비스 흐름 이미지</span></div>
-          <div class="overview-card">
-            <p class="mini-label">WHY THIS PROJECT</p>
-            <h3>실제 사용 환경에서는 정상 요청보다 실패 상황이 더 중요했습니다.</h3>
-            <p>네트워크 단절, 같은 시간대 예약, 재전송에 따른 중복 요청, 사용자별 권한까지 함께 고려해야 했습니다.</p>
-            <div class="tech-inline">Kotlin · Compose · Room · WorkManager · Ktor · Spring Boot · PostgreSQL</div>
+        <div class="project-overview-grid">
+          <div class="visual-placeholder hero-visual">
+            <strong>MAIN UI / SERVICE FLOW</strong>
+            <span>대표 앱 화면 또는 서비스 흐름 이미지</span>
           </div>
+          <aside class="overview-panel">
+            <p class="mini-label">PROJECT SUMMARY</p>
+            <p>실제 사내 사용을 목표로 자전거 예약부터 반납까지의 전체 흐름을 구현했습니다. 단순 CRUD보다 네트워크 실패, 예약 충돌, 중복 요청처럼 운영 단계에서 생길 문제를 먼저 정의했습니다.</p>
+            <div class="stack-list"><span>Client</span><p>Kotlin · Compose · Room · WorkManager · Ktor</p></div>
+            <div class="stack-list"><span>Server</span><p>Java 17 · Spring Boot · PostgreSQL · JWT</p></div>
+            <div class="stack-list"><span>Infra</span><p>Docker Compose · GitHub Actions</p></div>
+          </aside>
         </div>
 
-        <div class="decision-grid">
-          <article>
-            <p class="mini-label">DESIGN DECISION</p>
-            <h3>네트워크 성공 여부만으로 사용자 작업의 완료를 판단하지 않았습니다.</h3>
-            <p>Room을 앱의 로컬 단일 소스로 두고, 네트워크가 끊겨도 반납 상태를 보존한 뒤 WorkManager가 재전송하도록 구성했습니다.</p>
-          </article>
-          <article>
-            <p class="mini-label">WHY</p>
-            <h3>사용자는 네트워크 상태와 무관하게 자신의 작업이 보존되길 기대합니다.</h3>
-            <p>UI가 원격 응답에 직접 의존하지 않게 하면 화면 상태와 재시도 흐름을 분리할 수 있고, 실패 후 복구도 일관되게 다룰 수 있습니다.</p>
-          </article>
-          <article class="effect-card">
-            <p class="mini-label">EFFECT</p>
-            <h3>오프라인 상황에서도 작업을 잃지 않는 흐름</h3>
-            <p>반납 요청을 다시 시도할 수 있고, 로컬 상태를 기준으로 UI를 유지해 사용자 경험의 단절을 줄였습니다.</p>
-          </article>
+        <div class="focus-cards">
+          <article><span>01</span><h3>오프라인 반납</h3><p>네트워크가 끊겨도 사용자의 반납 작업 자체는 잃지 않도록 설계했습니다.</p></article>
+          <article><span>02</span><h3>예약 충돌·중복 요청</h3><p>동시에 겹치는 예약과 재시도에 따른 중복 요청을 서버와 DB에서 함께 방어했습니다.</p></article>
+          <article><span>03</span><h3>권한 검증</h3><p>역할과 예약 소유권을 클라이언트가 아닌 서버 기준으로 판단하도록 구성했습니다.</p></article>
         </div>
-
-        <div class="code-row">
-          <div class="code-slot"><span>CODE EXCERPT</span><strong>Room + WorkManager 재전송 흐름</strong><small>실제 프로젝트 코드 스니펫 추가 예정</small></div>
-          <div class="code-note">
-            <p class="mini-label">MORE DECISIONS</p>
-            <ul>
-              <li>PostgreSQL exclusion constraint로 시간대 예약 충돌을 DB에서도 방어</li>
-              <li>UUID idempotency key와 advisory lock으로 중복 요청 처리</li>
-              <li>JWT·Refresh Token rotation과 서버 측 역할·소유권 검증</li>
-              <li>Repository 인터페이스와 Fake/Ktor RemoteDataSource 분리로 교체 가능성 확보</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="result-line"><span>RESULT</span><strong>사내 실제 사용 가능성 검토 단계까지 진행</strong><p>운영 환경과 보안 기준을 개발 과정에서 직접 마주한 프로젝트입니다.</p></div>
         <p class="page-number">02</p>
       </section>
 
-      <section id="bamboo" class="folio-page project-page observed-section">
-        <header class="project-head">
-          <div>
-            <p class="page-kicker">PROJECT 02 · BACKEND / FRONTEND</p>
-            <h2>대나무숲</h2>
-            <p>로그인 없이 사용하는 사내 익명 게시판</p>
-          </div>
-          <div class="role-box"><span>ROLE</span><strong>Full Stack</strong><small>Backend 중심 설계 및 구현</small></div>
+      <section class="folio-page project-detail-page">
+        <header class="detail-page-head">
+          <div><p class="page-kicker">BIKE - BOOK · DEEP DIVE</p><h2>설계 판단과 구현 근거</h2></div>
+          <p>특별한 기술을 많이 나열하기보다, 문제가 생겼을 때 어떤 기준으로 선택했는지를 보여주는 영역입니다.</p>
         </header>
 
-        <div class="hero-grid reverse">
-          <div class="overview-card">
-            <p class="mini-label">CORE QUESTION</p>
-            <h3>익명 서비스라고 해서 권한과 정합성까지 익명일 수는 없었습니다.</h3>
-            <p>사용자에게 로그인 절차는 없애되 작성자 소유권과 동시 요청의 데이터 정합성은 서버가 책임지도록 설계했습니다.</p>
-            <div class="tech-inline">Spring Boot · JPA · PostgreSQL · React · TypeScript · k6</div>
+        <article class="deep-dive-block">
+          <div class="decision-copy">
+            <p class="decision-index">01 · OFFLINE RETURN</p>
+            <h3>네트워크 성공 여부와 사용자의 작업 완료를 분리했습니다.</h3>
+            <div class="reason-flow">
+              <div><span>문제</span><p>반납 순간 네트워크가 끊기면 사용자가 수행한 작업이 그대로 사라질 수 있었습니다.</p></div>
+              <div><span>판단</span><p>원격 응답을 기다린 뒤 화면을 바꾸는 대신, 로컬 상태를 먼저 보존하고 전송은 재시도 가능한 작업으로 분리했습니다.</p></div>
+              <div><span>구현</span><p>Room을 로컬 데이터 원본으로 두고 WorkManager를 이용해 반납 요청을 다시 전송하도록 구성했습니다.</p></div>
+              <div><span>효과</span><p>네트워크 상태와 무관하게 사용자의 작업을 보존하고 UI 상태와 재시도 흐름을 분리할 수 있었습니다.</p></div>
+            </div>
           </div>
-          <div class="visual-placeholder"><strong>WEB UI / LOAD TEST</strong><span>게시판 화면 또는 부하 테스트 결과 이미지</span></div>
-        </div>
+          <div class="code-frame"><span>CODE EXCERPT</span><strong>Room + WorkManager 재전송 흐름</strong><small>실제 프로젝트 코드와 핵심 라인 설명을 이 영역에 추가</small></div>
+        </article>
 
-        <div class="decision-grid">
-          <article>
-            <p class="mini-label">DESIGN DECISION</p>
-            <h3>작성자 여부를 프론트 값이 아니라 서버 세션으로 확인했습니다.</h3>
-            <p>쿠키 기반 익명 세션을 사용하고 수정·삭제 시 서버가 소유권을 다시 검증하도록 했습니다.</p>
-          </article>
-          <article>
-            <p class="mini-label">CONCURRENCY</p>
-            <h3>동시에 요청돼도 결과가 우연에 맡겨지지 않도록 했습니다.</h3>
-            <p>조회수는 원자적 UPDATE, 수정·좋아요에는 비관적 잠금과 unique constraint를 적용했습니다.</p>
-          </article>
-          <article class="effect-card">
-            <p class="mini-label">EFFECT</p>
-            <h3>권한과 데이터 정합성을 서버가 끝까지 보장</h3>
-            <p>사용 편의성을 위해 인증 UI를 줄이면서도 작성자 검증과 중복 데이터 방지는 유지했습니다.</p>
-          </article>
-        </div>
-
-        <div class="code-row">
-          <div class="code-slot"><span>CODE EXCERPT</span><strong>원자적 조회수 / 동시성 제어</strong><small>실제 프로젝트 코드 스니펫 추가 예정</small></div>
-          <div class="metric-card"><span>LOAD TEST</span><strong>357.16 req/s</strong><p>200 VU · 3분 · 75,336 requests</p><strong>p95 52.89 ms</strong><p>HTTP error 0%</p></div>
-        </div>
-
+        <article class="deep-dive-block">
+          <div class="decision-copy">
+            <p class="decision-index">02 · CONCURRENCY / IDEMPOTENCY</p>
+            <h3>정상 요청만 가정하지 않고, 동시에 들어오는 요청과 재전송을 기준으로 설계했습니다.</h3>
+            <div class="reason-flow">
+              <div><span>문제</span><p>같은 시간대 예약이 동시에 생성되거나, 네트워크 재시도로 같은 요청이 여러 번 처리될 수 있었습니다.</p></div>
+              <div><span>판단</span><p>애플리케이션 코드의 사전 조회만으로는 경쟁 상태를 막기 어렵다고 보고 DB 제약과 멱등성을 함께 사용했습니다.</p></div>
+              <div><span>구현</span><p>PostgreSQL exclusion constraint와 UUID idempotency key, advisory lock을 이용해 충돌과 중복 처리를 방어했습니다.</p></div>
+              <div><span>효과</span><p>요청 순서나 재시도 횟수에 덜 의존하면서 예약 데이터의 정합성을 유지할 수 있도록 했습니다.</p></div>
+            </div>
+          </div>
+          <div class="code-frame"><span>CODE EXCERPT</span><strong>예약 충돌 + 멱등 요청 처리</strong><small>DB 제약과 서버 처리 코드 비교를 이 영역에 추가</small></div>
+        </article>
         <p class="page-number">03</p>
       </section>
 
-      <section id="mori" class="folio-page project-page observed-section">
-        <header class="project-head">
+      <section id="bamboo" class="folio-page project-overview-page observed-section">
+        <header class="project-title-row">
           <div>
-            <p class="page-kicker">PROJECT 03 · ANDROID</p>
-            <h2>Mori</h2>
-            <p>EC2 서버의 CPU·메모리·디스크·네트워크 상태를 조회하고 시각화하는 Android 앱</p>
+            <p class="page-kicker">PROJECT 02 · 2026.07</p>
+            <h2>대나무숲</h2>
+            <p class="project-subtitle">로그인 없이 글과 댓글을 작성하는 익명 웹 게시판</p>
           </div>
-          <div class="role-box"><span>ROLE</span><strong>Android</strong><small>단독 구현</small></div>
+          <dl class="project-meta">
+            <div><dt>Role</dt><dd>Full Stack · Backend 중심</dd></div>
+            <div><dt>Focus</dt><dd>권한 · 동시성 · 성능 검증</dd></div>
+          </dl>
         </header>
 
-        <div class="wide-visual visual-placeholder"><strong>DASHBOARD / CUSTOM CHART</strong><span>서버 지표 대시보드 화면</span></div>
-
-        <div class="decision-grid">
-          <article>
-            <p class="mini-label">STRUCTURE</p>
-            <h3>화면이 데이터 획득 방식에 직접 묶이지 않게 했습니다.</h3>
-            <p>feature·core·data 기준으로 모듈을 나누고 화면과 데이터 계층의 책임을 분리했습니다.</p>
-          </article>
-          <article>
-            <p class="mini-label">DATA FLOW</p>
-            <h3>서로 독립적인 지표 요청은 기다리지 않고 함께 가져왔습니다.</h3>
-            <p>Coroutines async/await로 여러 서버 지표 API를 병렬 조회해 대시보드 데이터를 구성했습니다.</p>
-          </article>
-          <article class="effect-card">
-            <p class="mini-label">EFFECT</p>
-            <h3>화면 구조와 데이터 소스를 독립적으로 변경할 수 있는 기반</h3>
-            <p>데이터 획득 방식이 바뀌어도 UI 수정 범위를 줄이고, 여러 지표를 한 화면에서 빠르게 보여줄 수 있게 했습니다.</p>
-          </article>
+        <div class="project-overview-grid">
+          <div class="visual-placeholder hero-visual"><strong>WEB UI / LOAD TEST</strong><span>게시판 화면 또는 부하 테스트 결과 이미지</span></div>
+          <aside class="overview-panel">
+            <p class="mini-label">PROJECT SUMMARY</p>
+            <p>로그인 절차는 없애되 작성자 권한과 데이터 정합성은 유지해야 했습니다. 편의성을 위해 인증 UI를 줄이면서 서버의 책임은 오히려 더 명확하게 두었습니다.</p>
+            <div class="stack-list"><span>Backend</span><p>Spring Boot · JPA · PostgreSQL</p></div>
+            <div class="stack-list"><span>Frontend</span><p>React · TypeScript · Axios</p></div>
+            <div class="stack-list"><span>Verify</span><p>k6 · PostgreSQL consistency check</p></div>
+          </aside>
         </div>
 
-        <div class="code-row">
-          <div class="code-slot"><span>CODE EXCERPT</span><strong>async/await 병렬 조회</strong><small>실제 프로젝트 코드 스니펫 추가 예정</small></div>
-          <div class="code-slot"><span>CODE EXCERPT</span><strong>Canvas 기반 차트 렌더링</strong><small>실제 프로젝트 코드 스니펫 추가 예정</small></div>
+        <div class="focus-cards">
+          <article><span>01</span><h3>익명 소유권</h3><p>프론트가 넘긴 값이 아니라 서버의 익명 세션을 기준으로 작성자 권한을 검증했습니다.</p></article>
+          <article><span>02</span><h3>동시성 제어</h3><p>조회수·수정·좋아요처럼 요청 성격이 다른 기능에 각각 다른 제어 방식을 적용했습니다.</p></article>
+          <article><span>03</span><h3>부하 검증</h3><p>구현 뒤 k6로 실제 부하를 주고 응답 지연과 오류율, DB 정합성을 확인했습니다.</p></article>
         </div>
-
-        <div class="tech-line"><strong>TECH</strong><span>Kotlin · Jetpack Compose · Hilt · Coroutines · Retrofit · Canvas</span></div>
         <p class="page-number">04</p>
       </section>
 
-      <section id="match" class="folio-page project-page observed-section">
-        <header class="project-head">
-          <div>
-            <p class="page-kicker">PROJECT 04 · ANDROID</p>
-            <h2>관:상견례</h2>
-            <p>사용자 매칭과 실시간 1:1 채팅을 제공하는 Android 앱</p>
-          </div>
-          <div class="role-box"><span>ROLE</span><strong>Android</strong><small>앱 개발</small></div>
+      <section class="folio-page project-detail-page">
+        <header class="detail-page-head">
+          <div><p class="page-kicker">대나무숲 · DEEP DIVE</p><h2>익명성과 데이터 신뢰를 함께 다루기</h2></div>
+          <p>사용자 경험을 단순하게 만드는 대신 서버가 책임져야 할 검증을 더 분명하게 두었습니다.</p>
         </header>
 
-        <div class="hero-grid">
-          <div class="visual-placeholder tall-visual"><strong>CHAT / MATCHING UI</strong><span>매칭·채팅 주요 화면</span></div>
-          <div class="overview-card">
-            <p class="mini-label">CORE QUESTION</p>
-            <h3>실시간 메시지와 목록 데이터는 같은 방식으로 다루지 않았습니다.</h3>
-            <p>즉시 도착해야 하는 채팅과 점진적으로 불러오는 목록, 앱 재실행 후에도 남아야 하는 사용자 상태를 각 특성에 맞게 분리했습니다.</p>
-            <div class="tech-inline">Kotlin · Compose · WebSocket · OkHttp · DataStore · Paging3</div>
+        <article class="deep-dive-block">
+          <div class="decision-copy">
+            <p class="decision-index">01 · OWNERSHIP</p>
+            <h3>익명 서비스에서도 소유권은 서버가 알고 있어야 했습니다.</h3>
+            <div class="reason-flow">
+              <div><span>문제</span><p>로그인이 없다고 해서 클라이언트가 보내는 작성자 표시값을 신뢰하면 수정·삭제 권한을 보호할 수 없습니다.</p></div>
+              <div><span>판단</span><p>사용자에게 계정은 요구하지 않되 동일 브라우저를 식별할 최소한의 서버 기준은 유지했습니다.</p></div>
+              <div><span>구현</span><p>쿠키 기반 익명 세션으로 작성자를 식별하고 수정·삭제 요청마다 서버에서 소유권을 다시 확인했습니다.</p></div>
+              <div><span>효과</span><p>로그인 없는 사용 흐름을 유지하면서도 권한 판단을 프론트엔드 상태에 의존하지 않게 했습니다.</p></div>
+            </div>
           </div>
-        </div>
+          <div class="code-frame"><span>CODE EXCERPT</span><strong>익명 세션 + 소유권 검증</strong><small>컨트롤러/서비스 검증 흐름과 실제 코드를 배치</small></div>
+        </article>
 
-        <div class="decision-grid">
-          <article>
-            <p class="mini-label">REALTIME</p>
-            <h3>채팅은 WebSocket으로 연결 상태와 메시지 흐름을 관리했습니다.</h3>
-            <p>일반 HTTP 요청과 다른 생명주기를 가진 실시간 연결을 별도로 다루도록 구성했습니다.</p>
-          </article>
-          <article>
-            <p class="mini-label">STATE</p>
-            <h3>목록과 로컬 사용자 상태는 각 목적에 맞는 도구를 사용했습니다.</h3>
-            <p>Paging3로 목록 로딩을 나누고 DataStore로 앱 재실행 뒤에도 필요한 상태를 보존했습니다.</p>
-          </article>
-          <article class="effect-card">
-            <p class="mini-label">EFFECT</p>
-            <h3>데이터 성격에 따라 상태 관리 방식을 분리</h3>
-            <p>실시간 통신, 대용량 목록, 영속 상태가 서로 얽히지 않도록 책임을 나눴습니다.</p>
-          </article>
-        </div>
-
-        <div class="code-row">
-          <div class="code-slot"><span>CODE EXCERPT</span><strong>WebSocket 메시지 처리 흐름</strong><small>실제 프로젝트 코드 스니펫 추가 예정</small></div>
-          <div class="code-slot"><span>CODE EXCERPT</span><strong>Paging3 목록 상태 처리</strong><small>실제 프로젝트 코드 스니펫 추가 예정</small></div>
-        </div>
-
+        <article class="deep-dive-block">
+          <div class="decision-copy">
+            <p class="decision-index">02 · CONCURRENCY / VERIFY</p>
+            <h3>기능마다 같은 잠금을 쓰지 않고 충돌 가능성에 맞춰 선택했습니다.</h3>
+            <div class="reason-flow">
+              <div><span>문제</span><p>조회수, 좋아요, 수정 요청은 동시에 들어왔을 때 발생하는 문제가 서로 달랐습니다.</p></div>
+              <div><span>판단</span><p>조회수는 원자적 UPDATE, 수정·좋아요는 비관적 잠금과 unique constraint로 역할을 나눴습니다.</p></div>
+              <div><span>검증</span><p>200 VU로 3분간 75,336건을 요청해 357.16 req/s, HTTP p95 52.89ms, 오류율 0%를 확인했습니다.</p></div>
+              <div><span>효과</span><p>동시 요청에 대한 가정을 코드에만 남기지 않고 부하와 SQL 정합성 검사로 확인했습니다.</p></div>
+            </div>
+          </div>
+          <div class="metric-frame"><span>LOAD TEST</span><strong>357.16 req/s</strong><p>200 VU · 3 min · 75,336 requests</p><strong>p95 52.89 ms</strong><p>HTTP error 0%</p></div>
+        </article>
         <p class="page-number">05</p>
+      </section>
+
+      <section id="mori" class="folio-page project-overview-page observed-section">
+        <header class="project-title-row">
+          <div>
+            <p class="page-kicker">PROJECT 03 · 2025.09</p>
+            <h2>Mori</h2>
+            <p class="project-subtitle">EC2 서버의 CPU·메모리·디스크·네트워크 지표를 조회하고 시각화하는 Android 앱</p>
+          </div>
+          <dl class="project-meta">
+            <div><dt>Role</dt><dd>Android · 단독 구현</dd></div>
+            <div><dt>Focus</dt><dd>모듈 경계 · 병렬 데이터 로딩 · 시각화</dd></div>
+          </dl>
+        </header>
+
+        <div class="project-overview-grid">
+          <div class="visual-placeholder hero-visual"><strong>DASHBOARD / CUSTOM CHART</strong><span>서버 지표 대시보드와 차트 화면 이미지</span></div>
+          <aside class="overview-panel">
+            <p class="mini-label">PROJECT SUMMARY</p>
+            <p>여러 서버 지표를 모바일에서 빠르게 확인할 수 있도록 데이터 로딩과 화면 구조를 분리하고, 지표 변화는 Android Canvas로 직접 시각화했습니다.</p>
+            <div class="stack-list"><span>Android</span><p>Kotlin · Jetpack Compose · Hilt</p></div>
+            <div class="stack-list"><span>Data</span><p>Coroutines · Retrofit · async/await</p></div>
+            <div class="stack-list"><span>Visual</span><p>Android Canvas</p></div>
+          </aside>
+        </div>
+
+        <div class="focus-cards">
+          <article><span>01</span><h3>모듈 경계</h3><p>feature·core·data 기준으로 역할을 나눠 화면과 데이터 획득 방식을 분리했습니다.</p></article>
+          <article><span>02</span><h3>병렬 API 호출</h3><p>서로 독립적인 서버 지표는 순차적으로 기다리지 않고 동시에 요청했습니다.</p></article>
+          <article><span>03</span><h3>직접 그리는 차트</h3><p>서버 지표의 성격에 맞게 Canvas 기반 차트를 직접 구성했습니다.</p></article>
+        </div>
+        <p class="page-number">06</p>
+      </section>
+
+      <section class="folio-page project-detail-page">
+        <header class="detail-page-head">
+          <div><p class="page-kicker">MORI · DEEP DIVE</p><h2>화면과 데이터 획득을 느슨하게 연결하기</h2></div>
+          <p>Android 내부 구조와 비동기 데이터 흐름을 중심으로 실제 코드 근거를 붙일 수 있는 프레임입니다.</p>
+        </header>
+
+        <article class="deep-dive-block">
+          <div class="decision-copy">
+            <p class="decision-index">01 · MODULE BOUNDARY</p>
+            <h3>화면이 API 구현 방식까지 알지 않게 구조를 나눴습니다.</h3>
+            <div class="reason-flow">
+              <div><span>문제</span><p>화면과 데이터 획득 코드가 직접 연결되면 기능이 늘어날수록 변경 범위가 넓어집니다.</p></div>
+              <div><span>판단</span><p>공통 영역과 데이터 계층, 기능 영역을 분리해 각 변경의 영향을 제한하려고 했습니다.</p></div>
+              <div><span>구현</span><p>feature·core·data 기준의 멀티모듈 구조를 구성했습니다.</p></div>
+              <div><span>효과</span><p>화면 기능과 데이터 처리 코드를 구분해 구조를 읽고 변경하기 쉽게 만들었습니다.</p></div>
+            </div>
+          </div>
+          <div class="code-frame"><span>CODE EXCERPT</span><strong>멀티모듈 의존 방향</strong><small>모듈 구조 이미지 또는 실제 의존 설정 코드를 추가</small></div>
+        </article>
+
+        <article class="deep-dive-block">
+          <div class="decision-copy">
+            <p class="decision-index">02 · PARALLEL DATA / CANVAS</p>
+            <h3>독립적인 지표는 함께 가져오고, 필요한 형태로 직접 그렸습니다.</h3>
+            <div class="reason-flow">
+              <div><span>문제</span><p>CPU·메모리·디스크·네트워크 요청을 순서대로 기다리면 전체 대기 시간이 길어집니다.</p></div>
+              <div><span>판단</span><p>서로 의존하지 않는 요청은 병렬화하고, 화면 표현은 서버 응답 형태와 분리했습니다.</p></div>
+              <div><span>구현</span><p>Coroutines async/await로 지표를 병렬 조회하고 Canvas로 차트를 직접 렌더링했습니다.</p></div>
+              <div><span>효과</span><p>여러 지표를 한 번에 구성하면서 화면 표현을 앱 요구사항에 맞춰 제어할 수 있었습니다.</p></div>
+            </div>
+          </div>
+          <div class="code-frame"><span>CODE EXCERPT</span><strong>async/await + Canvas 렌더링</strong><small>병렬 호출 코드와 차트 렌더링 핵심 부분을 추가</small></div>
+        </article>
+        <p class="page-number">07</p>
+      </section>
+
+      <section id="match" class="folio-page project-overview-page observed-section">
+        <header class="project-title-row">
+          <div>
+            <p class="page-kicker">PROJECT 04 · 2025.07 — 08</p>
+            <h2>관:상견례</h2>
+            <p class="project-subtitle">사용자 매칭과 실시간 1:1 채팅을 제공하는 Android 앱</p>
+          </div>
+          <dl class="project-meta">
+            <div><dt>Role</dt><dd>Android</dd></div>
+            <div><dt>Focus</dt><dd>실시간 통신 · 페이지 데이터 · 영속 상태</dd></div>
+          </dl>
+        </header>
+
+        <div class="project-overview-grid">
+          <div class="visual-placeholder hero-visual"><strong>CHAT / MATCHING UI</strong><span>매칭·채팅 주요 화면 이미지</span></div>
+          <aside class="overview-panel">
+            <p class="mini-label">PROJECT SUMMARY</p>
+            <p>실시간으로 들어오는 메시지, 점진적으로 불러오는 채팅 이력, 앱 재실행 후에도 유지돼야 하는 세션처럼 성격이 다른 데이터를 Android 안에서 각각 다르게 처리했습니다.</p>
+            <div class="stack-list"><span>Realtime</span><p>WebSocket · OkHttp</p></div>
+            <div class="stack-list"><span>List</span><p>Paging3</p></div>
+            <div class="stack-list"><span>State</span><p>DataStore · MVVM · Repository</p></div>
+          </aside>
+        </div>
+
+        <div class="focus-cards">
+          <article><span>01</span><h3>실시간 메시지</h3><p>서버에서 즉시 전달되는 메시지는 WebSocket 연결로 별도 처리했습니다.</p></article>
+          <article><span>02</span><h3>채팅 이력</h3><p>과거 메시지 목록은 Paging3를 사용해 필요한 범위만 점진적으로 불러오도록 했습니다.</p></article>
+          <article><span>03</span><h3>사용자 상태</h3><p>로그인 세션과 토큰은 DataStore를 이용해 앱 재실행 이후에도 유지했습니다.</p></article>
+        </div>
+        <p class="page-number">08</p>
+      </section>
+
+      <section class="folio-page project-detail-page">
+        <header class="detail-page-head">
+          <div><p class="page-kicker">관:상견례 · DEEP DIVE</p><h2>데이터의 수명과 성격에 따라 처리 방식을 나누기</h2></div>
+          <p>하나의 상태 관리 방식으로 모든 데이터를 밀어 넣지 않고, 데이터가 어떻게 들어오고 얼마나 오래 살아야 하는지를 기준으로 선택했습니다.</p>
+        </header>
+
+        <article class="deep-dive-block">
+          <div class="decision-copy">
+            <p class="decision-index">01 · REALTIME VS PAGED DATA</p>
+            <h3>지금 도착하는 메시지와 과거 이력을 같은 흐름으로 다루지 않았습니다.</h3>
+            <div class="reason-flow">
+              <div><span>문제</span><p>실시간 이벤트와 과거 목록은 갱신 방식과 필요한 메모리 범위가 다릅니다.</p></div>
+              <div><span>판단</span><p>실시간 데이터는 연결 중심으로, 이력 데이터는 페이지 단위 조회로 분리했습니다.</p></div>
+              <div><span>구현</span><p>WebSocket·OkHttp로 메시지를 수신하고 Paging3로 채팅 이력을 불러왔습니다.</p></div>
+              <div><span>효과</span><p>실시간성과 목록 확장성을 각각의 데이터 특성에 맞게 관리할 수 있었습니다.</p></div>
+            </div>
+          </div>
+          <div class="code-frame"><span>CODE EXCERPT</span><strong>WebSocket 수신 + Paging3 이력 로딩</strong><small>두 데이터 흐름이 만나는 지점을 실제 코드로 설명</small></div>
+        </article>
+
+        <article class="deep-dive-block">
+          <div class="decision-copy">
+            <p class="decision-index">02 · PERSISTENT STATE</p>
+            <h3>화면 상태와 앱을 넘어 유지되는 사용자 상태를 구분했습니다.</h3>
+            <div class="reason-flow">
+              <div><span>문제</span><p>로그인 세션과 토큰은 화면이 사라져도, 앱을 다시 실행해도 유지돼야 합니다.</p></div>
+              <div><span>판단</span><p>일시적인 UI 상태와 영속 상태를 분리하고 데이터 접근 경로도 Repository 뒤로 숨겼습니다.</p></div>
+              <div><span>구현</span><p>DataStore로 세션·토큰을 저장하고 MVVM·Repository 구조에서 데이터 접근 책임을 분리했습니다.</p></div>
+              <div><span>효과</span><p>화면 수명주기와 독립적으로 사용자 상태를 유지하면서 UI의 직접 의존을 줄였습니다.</p></div>
+            </div>
+          </div>
+          <div class="code-frame"><span>CODE EXCERPT</span><strong>DataStore + Repository 상태 흐름</strong><small>저장·조회·화면 전달 구조를 코드로 추가</small></div>
+        </article>
+        <p class="page-number">09</p>
       </section>
 
       <section id="skills" class="folio-page skills-page observed-section">
         <header class="skills-head">
           <p class="page-kicker">SKILLS</p>
-          <h2>주력은 선명하게,<br />사용 경험은 근거와 함께.</h2>
-          <p>단순히 많이 적기보다 앞선 프로젝트에서 실제로 사용한 기술을 중심으로 정리했습니다.</p>
+          <h2>주력은 선명하게,<br />사용 경험은 따로 정리했습니다.</h2>
+          <p>프로젝트에서 실제로 사용한 기술을 중심으로 구성합니다.</p>
         </header>
 
         <div class="main-stack">
           <span>MAIN STACK</span>
-          <div><strong>Kotlin</strong><strong>Android</strong><strong>Jetpack Compose</strong><strong>Java</strong><strong>Spring Boot</strong><strong>PostgreSQL</strong></div>
+          <div class="main-stack-grid">
+            <strong>Kotlin</strong><strong>Android</strong><strong>Jetpack Compose</strong>
+            <strong>Java</strong><strong>Spring Boot</strong><strong>PostgreSQL</strong>
+          </div>
         </div>
 
         <div class="skill-groups">
@@ -259,9 +350,7 @@
           <article><span>BACKEND & DATA</span><p>Spring Data JPA · MyBatis · MySQL · Redis · JWT · Flyway · REST API</p></article>
           <article><span>INFRA & TOOLS</span><p>Docker · AWS EC2 · Nginx · GitHub Actions · Git · Figma</p></article>
         </div>
-
-        <div class="closing-copy"><span>PORTFOLIO</span><strong>Android를 주력으로 하되, 기능이 실제로 동작하는 전체 흐름까지 이해하는 개발자를 지향합니다.</strong></div>
-        <p class="page-number">06</p>
+        <p class="page-number">10</p>
       </section>
     </main>
   </div>
@@ -269,11 +358,18 @@
   <script>
     const sections = [...document.querySelectorAll('.observed-section')];
     const links = [...document.querySelectorAll('.section-nav a')];
-    const activate = (id) => links.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
+
+    const activate = (id) => {
+      links.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
+    };
+
     const observer = new IntersectionObserver((entries) => {
-      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
       if (visible) activate(visible.target.id);
-    }, { rootMargin: '-20% 0px -65% 0px', threshold: [0.05, 0.2, 0.45] });
+    }, { rootMargin: '-18% 0px -62% 0px', threshold: [0.05, 0.2, 0.45] });
+
     sections.forEach((section) => observer.observe(section));
   </script>
 </body>
