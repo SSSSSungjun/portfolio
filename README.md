@@ -1,1 +1,7 @@
-[Portfolio 및 Resume 링크](https://sssssungjun.github.io/portfolio/)
+## Portfolio
+
+[Portfolio](https://sssssungjun.github.io/portfolio/portfolio/)
+
+## Resume
+
+[Resume](https://sssssungjun.github.io/portfolio/)
