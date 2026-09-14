@@ -465,3 +465,7 @@ li::before {
     text-decoration: none !important;
   }
 }
+
+/* Portfolio and resume are intentionally separate documents. */
+.site-header { display: none !important; }
+.resume { margin-top: 36px; }
