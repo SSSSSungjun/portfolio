@@ -1,14 +1,15 @@
 :root {
-  --primary: #315f9a;
-  --primary-strong: #244a78;
-  --primary-soft: #eef4fb;
-  --primary-line: #d9e5f3;
-  --text: #20252b;
-  --muted: #68727d;
-  --subtle: #8b95a1;
-  --line: #e8ebef;
+  --primary: #1f7a5c;
+  --primary-strong: #14543f;
+  --primary-soft: #edf7f2;
+  --primary-soft-strong: #e3f1ea;
+  --primary-line: #cfe4d9;
+  --text: #1f2723;
+  --muted: #65716b;
+  --subtle: #89948e;
+  --line: #e6ece8;
   --paper: #ffffff;
-  --canvas: #f4f6f8;
+  --canvas: #f3f7f5;
 }
 
 * {
@@ -45,7 +46,7 @@ a:hover {
   margin: 44px auto;
   padding: 72px 78px 84px;
   background: var(--paper);
-  box-shadow: 0 16px 50px rgba(28, 39, 55, 0.08);
+  box-shadow: 0 16px 50px rgba(22, 56, 43, 0.08);
 }
 
 .hero {
@@ -74,6 +75,7 @@ p {
 
 h1 {
   margin-bottom: 14px;
+  color: #18211d;
   font-size: 42px;
   line-height: 1.15;
   letter-spacing: -0.045em;
@@ -82,7 +84,7 @@ h1 {
 .summary {
   max-width: 680px;
   margin-bottom: 0;
-  color: #3e4751;
+  color: #3f4a45;
   font-size: 16px;
   line-height: 1.8;
 }
@@ -154,6 +156,7 @@ h1 {
 .entry-head h3,
 .skill-group h3 {
   margin-bottom: 4px;
+  color: #26302b;
   font-size: 19px;
   line-height: 1.4;
   letter-spacing: -0.025em;
@@ -161,6 +164,7 @@ h1 {
 
 .project .entry-head h3 {
   margin-bottom: 5px;
+  color: #1c2722;
   font-size: 21px;
 }
 
@@ -194,7 +198,7 @@ ul {
 
 li {
   margin: 4px 0;
-  color: #3d4650;
+  color: #3d4842;
 }
 
 li::marker {
@@ -209,7 +213,7 @@ li::marker {
 
 .skill-group h3 {
   margin-bottom: 12px;
-  color: #303841;
+  color: #303a35;
   font-size: 15px;
 }
 
@@ -228,16 +232,16 @@ li::marker {
   padding: 4px 9px;
   border: 1px solid var(--primary-line);
   border-radius: 6px;
-  background: #f8fafc;
-  color: #425060;
+  background: #f8faf9;
+  color: #425049;
   font-size: 12px;
   font-weight: 600;
   line-height: 1.2;
 }
 
 .primary-tags span {
-  border-color: #cfdff1;
-  background: var(--primary-soft);
+  border-color: #bfdacb;
+  background: var(--primary-soft-strong);
   color: var(--primary-strong);
 }
 
@@ -293,7 +297,7 @@ li::marker {
   justify-content: space-between;
   gap: 20px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #f0f2f4;
+  border-bottom: 1px solid #eef2ef;
 }
 
 .simple-list > div:last-child {
@@ -302,7 +306,7 @@ li::marker {
 }
 
 .simple-list strong {
-  color: #2f3740;
+  color: #2d3732;
 }
 
 .simple-list span {
