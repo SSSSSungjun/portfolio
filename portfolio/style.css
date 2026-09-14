@@ -99,3 +99,20 @@ a { color: inherit; text-decoration: none; }
   .project-grid { grid-template-columns: 1fr; }
   .footer-cta { align-items: flex-start; flex-direction: column; }
 }
+
+.brand {
+  font-size: 0;
+}
+
+.brand::after {
+  content: "윤성준 포트폴리오 및 이력서";
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 760px) {
+  .brand::after {
+    font-size: 12px;
+  }
+}
