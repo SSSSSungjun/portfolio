@@ -1,0 +1,86 @@
+name: One-shot resume cleanup and PDF export
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/resume-one-shot.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: site
+
+      - name: Clean resume and portfolio pages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          mori_line = '            <li>서버 지표의 의미와 백엔드 요구사항을 이해하기 위해 서버·JVM 관련 기본 개념을 학습하고 백엔드 팀과 지표 의미와 그래프 표현 방식을 조율했습니다.</li>\n'
+          github_nav = '      <a href="https://github.com/SSSSSungjun" target="_blank" rel="noreferrer">GitHub</a>\n'
+          print_button = '      <button class="print-button" type="button" onclick="window.print()">PDF 저장</button>\n'
+
+          for rel in ['index.html', 'resume/index.html']:
+              p = Path('site') / rel
+              s = p.read_text(encoding='utf-8')
+              s = s.replace(mori_line, '')
+              s = s.replace(github_nav, '')
+              s = s.replace(print_button, '')
+              p.write_text(s, encoding='utf-8')
+
+          p = Path('site/portfolio/index.html')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace(github_nav, '')
+          s = s.replace('        <a class="button" href="https://github.com/SSSSSungjun" target="_blank" rel="noreferrer">GitHub</a>\n', '')
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Commit gh-pages cleanup
+        working-directory: site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html resume/index.html portfolio/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Clean resume navigation and Mori description"
+            git push origin gh-pages
+          fi
+
+      - name: Install PDF dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk
+          python -m pip install --upgrade pip
+          python -m pip install weasyprint
+
+      - name: Generate resume PDF
+        run: |
+          python - <<'PY'
+          from weasyprint import HTML
+          HTML('site/resume/index.html').write_pdf('/tmp/resume.pdf')
+          PY
+
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          path: master
+
+      - name: Add PDF and remove one-shot workflow
+        run: |
+          cp /tmp/resume.pdf master/resume.pdf
+          rm -f master/.github/workflows/resume-one-shot.yml
+          cd master
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add resume PDF"
+          git push origin master
