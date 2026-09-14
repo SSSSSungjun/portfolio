@@ -2,4 +2,4 @@
 
 Android Developer
 
-[Portfolio](https://ssss­sungjun.github.io/portfolio/portfolio/) · [Resume](https://ssss­sungjun.github.io/portfolio/resume/) · [GitHub](https://github.com/SSSSSungjun)
+[Portfolio](https://SSSSSungjun.github.io/portfolio/portfolio/) · [Resume](https://SSSSSungjun.github.io/portfolio/resume/) · [GitHub](https://github.com/SSSSSungjun)
