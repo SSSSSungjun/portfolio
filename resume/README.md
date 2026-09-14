@@ -103,6 +103,20 @@ Android 네이티브 앱 개발을 중심으로 경험을 쌓아온 개발자입
 
 ---
 
+### 대나무숲 | 익명 웹 게시판
+**2026.07 | Full-stack Developer / 기술 설계**
+
+- 로그인 없이 글과 댓글을 작성하는 익명 게시판의 프론트엔드와 백엔드 구현
+- 쿠키 기반 익명 세션으로 서버 측 작성자 소유권 검증 구성
+- Controller, Service, Repository, DTO 책임 분리 및 API 계약 설계
+- 조회수 단일 UPDATE, 비관적 잠금, unique constraint로 동시 요청 정합성 관리
+- React reducer 기반 상태 관리와 API 레이어 분리
+- GitHub-hosted runner에서 PostgreSQL과 애플리케이션을 함께 실행해 가상 사용자 200명, 3분 부하 테스트 수행
+- 총 HTTP 요청 75,336건, 오류율 0%, p95 52.89ms 확인 및 SQL 정합성 검사 수행
+- **Tech:** Java, Spring Boot, Spring Data JPA, PostgreSQL, React, TypeScript, Flyway, Docker Compose, Nginx, k6, SSE
+
+---
+
 ### Mori | 서버 리포트 Android 앱
 **2025.09 | Android Developer**
 
@@ -164,20 +178,6 @@ Android 네이티브 앱 개발을 중심으로 경험을 쌓아온 개발자입
 - Android 프론트엔드 전반 담당
 - Figma로 UI, 화면 흐름, 데이터 방향과 API 연동 지점을 시각화
 - 비대면 환경에서 정기 화상회의를 진행하며 Android 파트 완성
-
----
-
-### 대나무숲 | 익명 웹 게시판
-**Full-stack Developer / 기술 설계**
-
-- 로그인 없이 글과 댓글을 작성하는 익명 게시판의 프론트엔드와 백엔드 구현
-- 쿠키 기반 익명 세션으로 서버 측 작성자 소유권 검증 구성
-- Controller, Service, Repository, DTO 책임 분리 및 API 계약 설계
-- 조회수 단일 UPDATE, 비관적 잠금, unique constraint로 동시 요청 정합성 관리
-- React reducer 기반 상태 관리와 API 레이어 분리
-- GitHub-hosted runner에서 PostgreSQL과 애플리케이션을 함께 실행해 가상 사용자 200명, 3분 부하 테스트 수행
-- 총 HTTP 요청 75,336건, 오류율 0%, p95 52.89ms 확인 및 SQL 정합성 검사 수행
-- **Tech:** Java, Spring Boot, Spring Data JPA, PostgreSQL, React, TypeScript, Flyway, Docker Compose, Nginx, k6, SSE
 
 ---
 
