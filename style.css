@@ -469,3 +469,24 @@ li::before {
 /* Portfolio and resume are intentionally separate documents. */
 .site-header { display: none !important; }
 .resume { margin-top: 36px; }
+
+/* Visual refinement */
+:root {
+  --primary: #12945f;
+  --primary-strong: #0b7147;
+  --primary-soft: #effaf4;
+  --primary-line: #ccebdc;
+  --canvas: #fafbfa;
+}
+
+.site-header { display: none !important; }
+.resume { margin-top: 20px; }
+
+@media (max-width: 760px) {
+  body { background: #fff; }
+  .resume { margin-top: 0; }
+}
+
+@media print {
+  .resume { margin-top: 0; }
+}
