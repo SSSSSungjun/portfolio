@@ -34,28 +34,52 @@ Kotlin과 Jetpack Compose 기반 Android 네이티브 앱 개발을 주력으로
 
 ### Android
 
-`Kotlin` `Jetpack Compose` `XML` `MVVM` `MVI` `UDF` `Hilt`  
-`Coroutines` `Flow` `Retrofit2` `Ktor Client` `OkHttp`  
-`Room` `DataStore` `WorkManager` `Paging3` `Navigation`  
-`WebSocket` `Firebase` `ML Kit`
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white)
+![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=flat-square&logo=jetpackcompose&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
+
+Kotlin · Jetpack Compose · XML · MVVM · MVI · UDF · Hilt  
+Coroutines · Flow · Retrofit2 · Ktor Client · OkHttp  
+Room · DataStore · WorkManager · Paging3 · Navigation · WebSocket · ML Kit
 
 ### Backend & Database
 
-`Java` `Spring Boot` `Spring MVC` `Spring Security` `Spring Data JPA`  
-`JDBC` `MyBatis` `PostgreSQL` `MySQL` `Redis` `JWT` `Flyway`
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+
+Java · Spring Boot · Spring MVC · Spring Security · Spring Data JPA  
+JDBC · MyBatis · PostgreSQL · MySQL · Redis · JWT · Flyway
 
 ### Frontend
 
-`React` `TypeScript` `Vue.js`
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+
+React · TypeScript · Vue.js
 
 ### Languages
 
-`Kotlin` `Java` `JavaScript` `TypeScript` `Python` `C++` `SQL`
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![SQL](https://img.shields.io/badge/SQL-336791?style=flat-square&logo=postgresql&logoColor=white)
+
+Kotlin · Java · JavaScript · TypeScript · Python · C++ · SQL
 
 ### Infra & Tools
 
-`Docker` `Docker Compose` `Nginx` `AWS EC2` `Git` `GitHub` `GitHub Actions`  
-`Jira` `Figma` `Notion` `Codex`
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+
+Docker · Docker Compose · Nginx · AWS EC2 · Git · GitHub · GitHub Actions  
+Jira · Figma · Notion · Codex
 
 ---
 
