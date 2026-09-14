@@ -78,6 +78,11 @@ a:hover {
   text-decoration: none;
 }
 
+.site-nav > a[href^="https://github.com"],
+.print-button {
+  display: none;
+}
+
 .print-button {
   min-height: 34px;
   padding: 0 12px;
