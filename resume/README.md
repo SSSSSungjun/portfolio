@@ -1,9 +1,9 @@
-# 윤성준 | Software Developer
+# 윤성준 | Android Developer
 
-Android와 Java·Spring 기반 백엔드 개발 경험을 가진 소프트웨어 개발자입니다. Kotlin 기반 모바일 앱 개발을 중심으로 시작해 Spring Boot, PostgreSQL을 활용한 백엔드와 풀스택 프로젝트까지 개발 범위를 확장해 왔습니다.
+Android 네이티브 앱 개발을 중심으로 경험을 쌓아온 개발자입니다. Kotlin과 Jetpack Compose 기반 모바일 앱을 주력으로 개발해 왔으며, 서비스 연동과 전체 흐름을 이해하기 위해 Java·Spring Boot 기반 백엔드 개발도 함께 경험했습니다.
 
 - GitHub: https://github.com/SSSSSungjun
-- 주요 분야: Android, Backend, Full-stack, IT·전산
+- 주요 분야: Android, Mobile Application, Backend
 
 ---
 
@@ -22,54 +22,48 @@ Android와 Java·Spring 기반 백엔드 개발 경험을 가진 소프트웨어
 ### 건국대학교 컴퓨터공학부 | 학사
 **2018.03 ~ 2025.02**
 
-- 주요 과목: 자료구조, 알고리즘, 운영체제, 데이터베이스, 소프트웨어공학, 시스템프로그래밍, 병렬프로그래밍, 인공지능, 클라우드웹서비스, 디지털영상처리
-
 ### Samsung SW·AI Academy For Youth 13기 | Mobile Track
 **2025.01 ~ 2025.12 | 수료**
 
 - Java, Kotlin, Android, Spring Boot, MySQL, 알고리즘, Vue.js 학습
-- 모바일, 백엔드 및 팀 프로젝트 수행
+- Android 네이티브 앱 개발을 중심으로 모바일 및 백엔드 팀 프로젝트 수행
 
 ---
 
 ## Tech Stack
 
-### Languages
-
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?logo=cplusplus&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-336791?logo=postgresql&logoColor=white)
-
 ### Android
 
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white)
 ![Android](https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white)
 ![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?logo=jetpackcompose&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=black)
 
-- Jetpack Compose, XML, MVVM, MVI, UDF, Hilt
+- Kotlin, Jetpack Compose, XML
+- MVVM, MVI, UDF, Hilt
 - Coroutines, Flow, Retrofit2, Ktor Client, OkHttp
-- Room, DataStore, WorkManager, Paging3, Navigation, WebSocket, ML Kit
+- Room, DataStore, WorkManager, Paging3, Navigation
+- WebSocket, Firebase, ML Kit
 
 ### Backend & Database
 
+![Java](https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?logo=springboot&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
 
-- Spring MVC, Spring Security, Spring Data JPA, JDBC, MyBatis, Spring AI
+- Java, Spring Boot, Spring MVC, Spring Security
+- Spring Data JPA, JDBC, MyBatis
 - PostgreSQL, MySQL, Redis, JWT, Flyway
 
-### Frontend
+### Frontend & Languages
 
 ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
 ![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?logo=vuedotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 
 - React, TypeScript, Vue.js
+- JavaScript, Python, C++, SQL
 
 ### Infra & Tools
 
@@ -81,52 +75,23 @@ Android와 Java·Spring 기반 백엔드 개발 경험을 가진 소프트웨어
 
 - Docker, Docker Compose, Nginx, AWS EC2
 - Git, GitHub, GitHub Actions, Jira, Figma, Notion
-- Multi-Module Architecture, Repository Pattern, Transactional Outbox
 - Codex 기반 AI 개발 규칙 및 자동 검수 환경 구성 경험
 
 ---
 
 ## Projects
 
-### Bike-book | 사내 자전거 예약 풀스택 앱
+### Bike-book | 사내 자전거 예약 Android·Backend 앱
 **2026.07 ~ 2026.08 | Android & Backend Developer / 기술 설계**
 
-- 사내 공용 자전거의 신청, 관리자 승인, 이용, 반납을 관리하는 풀스택 MVP 구현
-- Android와 백엔드의 전체 구조, API·데이터 계약, 개발 환경 및 테스트 구조 설계
+- 사내 공용 자전거의 신청, 관리자 승인, 이용, 반납을 관리하는 앱 구현
+- Android 전체 구조, API·데이터 계약, 개발 환경 및 테스트 구조 설계
 - Room을 단일 데이터 원본으로 사용하고 WorkManager 기반 오프라인 반납 재전송 구성
-- PostgreSQL exclusion constraint로 활성 예약의 시간 충돌 방어
-- UUID 멱등키와 advisory lock으로 네트워크 재시도에 따른 중복 요청 방어
-- Transactional Outbox로 예약 상태 변경과 알림 이벤트의 정합성 관리
-- JWT, Refresh Token Rotation, 역할 및 예약 소유권 서버 검증 적용
+- 서버 연동을 고려해 Repository 계층과 RemoteDataSource를 분리하고, 백엔드 연결 전에도 전체 앱 흐름을 실행할 수 있도록 구성
+- PostgreSQL exclusion constraint로 예약 시간 충돌을 방어하고 UUID 멱등키와 advisory lock으로 중복 요청 방어
 - Codex 작업 범위와 개발 규칙을 정하고 GitHub Actions를 활용한 결과 확인 및 코드 검수 자동화
 - 앱 완성 후 실사용 가능성 검토 단계까지 진행, 보안 검토 미통과로 실제 도입은 하지 않음
-- **Tech:** Kotlin, Jetpack Compose, Room, WorkManager, Ktor Client, Java 17, Spring Boot, Spring Security, PostgreSQL, JWT, Flyway, Docker Compose, GitHub Actions
-
----
-
-### 대나무숲 | 익명 웹 게시판
-**Full-stack Developer / 기술 설계**
-
-- 로그인 없이 글과 댓글을 작성하는 익명 게시판의 프론트엔드와 백엔드 구현
-- 쿠키 기반 익명 세션으로 서버 측 작성자 소유권 검증 구성
-- Controller, Service, Repository, DTO 책임 분리 및 API 계약 설계
-- 조회수 단일 UPDATE, 비관적 잠금, unique constraint로 동시 요청 정합성 관리
-- React reducer 기반 상태 관리와 API 레이어 분리
-- GitHub-hosted runner에서 PostgreSQL과 애플리케이션을 함께 실행해 가상 사용자 200명, 3분 부하 테스트 수행
-- 총 HTTP 요청 75,336건, 오류율 0%, p95 52.89ms 확인 및 SQL 정합성 검사 수행
-- **Tech:** Java, Spring Boot, Spring Data JPA, PostgreSQL, React, TypeScript, Flyway, Docker Compose, Nginx, k6, SSE
-
----
-
-### QuizLand | CS 퀴즈 플랫폼
-**2025.10.13 ~ 2025.11.21 | Backend Developer**
-
-- CS 문제와 사용자가 만든 문제를 풀 수 있는 퀴즈 플랫폼 개발
-- 백엔드 데이터 저장 구조를 NoSQL에서 PostgreSQL로 마이그레이션
-- Java·Spring 기반 백엔드 기능 구현
-- Spring AI를 활용한 서술형 채점 기능 개발 경험
-- Docker 기반 배포 환경 구성 경험
-- **Tech:** Java, Spring Boot, PostgreSQL, Spring AI, Docker
+- **Tech:** Kotlin, Jetpack Compose, Room, WorkManager, Ktor Client, Java 17, Spring Boot, PostgreSQL, JWT, Flyway, GitHub Actions
 
 ---
 
@@ -138,7 +103,7 @@ Android와 Java·Spring 기반 백엔드 개발 경험을 가진 소프트웨어
 - Coroutines `async/await`를 활용한 다중 API 병렬 처리
 - Canvas API 기반 서버 메트릭 차트 구현
 - 서버 및 JVM 기본 개념을 학습해 Prometheus 지표의 의미를 이해하고 화면 요구사항에 반영
-- **Tech:** Kotlin, Jetpack Compose, Hilt, Coroutines, Flow, Retrofit2, Canvas, Navigation, Multi-Module
+- **Tech:** Kotlin, Jetpack Compose, Hilt, Coroutines, Flow, Retrofit2, Canvas, Navigation
 
 ---
 
@@ -154,25 +119,14 @@ Android와 Java·Spring 기반 백엔드 개발 경험을 가진 소프트웨어
 
 ---
 
-### 싱싱과일 | 매장 주문·NFC 결제 플랫폼
-**2025.05 | Android & Backend Developer**
-
-- 비콘 감지와 GPS 위치 확인을 연동해 매장 내 모바일 주문 흐름 구현
-- Android NFC API를 활용한 결제 시뮬레이션 개발
-- XML UI와 ViewModel을 이용한 MVVM 구조 적용
-- Spring Boot와 MyBatis 기반 백엔드 개발 및 AWS EC2 배포
-- **Tech:** Kotlin, XML, MVVM, Beacon, GPS, NFC, Java, Spring Boot, MyBatis, AWS EC2
-
----
-
-### 따숨 | 환경 공공데이터 활용 친환경 실천 앱
+### 따숨 | 환경 공공데이터 활용 친환경 실천 Android 앱
 **2024 | Android Developer**
 
 - 환경부 공공데이터를 활용한 친환경 실천 유도 Android 앱 개발
 - 사용량 기반 친환경 보일러 추천, AI 컨설팅 챗봇, 환경 실천 커뮤니티, 자가 사용량 검침 기능 개발
 - 멀티모듈 구조로 모듈 간 의존성과 코드 재사용 관리
 - Hilt 의존성 주입과 MVVM 기반 ViewModel 구조 적용
-- **Tech:** Java, XML, ViewModel, Hilt, Multi-Module
+- **Tech:** Java, XML, ViewModel, Hilt
 
 ---
 
@@ -191,6 +145,31 @@ Android와 Java·Spring 기반 백엔드 개발 경험을 가진 소프트웨어
 - Android 프론트엔드 전반 담당
 - Figma로 UI, 화면 흐름, 데이터 방향과 API 연동 지점을 시각화
 - 비대면 환경에서 정기 화상회의를 진행하며 Android 파트 완성
+
+---
+
+### 싱싱과일 | 매장 주문·NFC 결제 플랫폼
+**2025.05 | Android & Backend Developer**
+
+- 비콘 감지와 GPS 위치 확인을 연동해 매장 내 모바일 주문 흐름 구현
+- Android NFC API를 활용한 결제 시뮬레이션 개발
+- XML UI와 ViewModel을 이용한 MVVM 구조 적용
+- Spring Boot와 MyBatis 기반 백엔드 개발 및 AWS EC2 배포
+- **Tech:** Kotlin, XML, MVVM, Beacon, GPS, NFC, Java, Spring Boot, MyBatis, AWS EC2
+
+---
+
+### 대나무숲 | 익명 웹 게시판
+**Full-stack Developer / 기술 설계**
+
+- 로그인 없이 글과 댓글을 작성하는 익명 게시판의 프론트엔드와 백엔드 구현
+- 쿠키 기반 익명 세션으로 서버 측 작성자 소유권 검증 구성
+- Controller, Service, Repository, DTO 책임 분리 및 API 계약 설계
+- 조회수 단일 UPDATE, 비관적 잠금, unique constraint로 동시 요청 정합성 관리
+- React reducer 기반 상태 관리와 API 레이어 분리
+- GitHub-hosted runner에서 PostgreSQL과 애플리케이션을 함께 실행해 가상 사용자 200명, 3분 부하 테스트 수행
+- 총 HTTP 요청 75,336건, 오류율 0%, p95 52.89ms 확인 및 SQL 정합성 검사 수행
+- **Tech:** Java, Spring Boot, Spring Data JPA, PostgreSQL, React, TypeScript, Flyway, Docker Compose, Nginx, k6, SSE
 
 ---
 
