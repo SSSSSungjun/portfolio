@@ -56,14 +56,22 @@ Android 네이티브 앱 개발을 중심으로 경험을 쌓아온 개발자입
 - Spring Data JPA, JDBC, MyBatis
 - PostgreSQL, MySQL, Redis, JWT, Flyway
 
-### Frontend & Languages
+### Frontend
 
 ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
 ![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?logo=vuedotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 
 - React, TypeScript, Vue.js
-- JavaScript, Python, C++, SQL
+
+### Languages
+
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?logo=cplusplus&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![SQL](https://img.shields.io/badge/SQL-336791?logo=postgresql&logoColor=white)
+
+- Kotlin, Java, JavaScript, TypeScript, Python, C++, SQL
 
 ### Infra & Tools
 
@@ -119,8 +127,19 @@ Android 네이티브 앱 개발을 중심으로 경험을 쌓아온 개발자입
 
 ---
 
+### 싱싱과일 | 매장 주문·NFC 결제 플랫폼
+**2025.05 | Android & Backend Developer**
+
+- 비콘 감지와 GPS 위치 확인을 연동해 매장 내 모바일 주문 흐름 구현
+- Android NFC API를 활용한 결제 시뮬레이션 개발
+- XML UI와 ViewModel을 이용한 MVVM 구조 적용
+- Spring Boot와 MyBatis 기반 백엔드 개발 및 AWS EC2 배포
+- **Tech:** Kotlin, XML, MVVM, Beacon, GPS, NFC, Java, Spring Boot, MyBatis, AWS EC2
+
+---
+
 ### 따숨 | 환경 공공데이터 활용 친환경 실천 Android 앱
-**2024 | Android Developer**
+**2025.04 ~ 2025.05 | Android Developer**
 
 - 환경부 공공데이터를 활용한 친환경 실천 유도 Android 앱 개발
 - 사용량 기반 친환경 보일러 추천, AI 컨설팅 챗봇, 환경 실천 커뮤니티, 자가 사용량 검침 기능 개발
@@ -148,17 +167,6 @@ Android 네이티브 앱 개발을 중심으로 경험을 쌓아온 개발자입
 
 ---
 
-### 싱싱과일 | 매장 주문·NFC 결제 플랫폼
-**2025.05 | Android & Backend Developer**
-
-- 비콘 감지와 GPS 위치 확인을 연동해 매장 내 모바일 주문 흐름 구현
-- Android NFC API를 활용한 결제 시뮬레이션 개발
-- XML UI와 ViewModel을 이용한 MVVM 구조 적용
-- Spring Boot와 MyBatis 기반 백엔드 개발 및 AWS EC2 배포
-- **Tech:** Kotlin, XML, MVVM, Beacon, GPS, NFC, Java, Spring Boot, MyBatis, AWS EC2
-
----
-
 ### 대나무숲 | 익명 웹 게시판
 **Full-stack Developer / 기술 설계**
 
@@ -179,7 +187,6 @@ Android 네이티브 앱 개발을 중심으로 경험을 쌓아온 개발자입
 - **정보처리기사** | 한국산업인력공단 | 2024.06.18
 - **한국사능력검정시험 2급** | 국사편찬위원회 | 2026.06.05
 - **TOEIC Speaking IH (140)** | ETS | 2026.09.06 | 유효기간 2028.09.06
-- **운전면허** | 2018.12.27
 
 ---
 
