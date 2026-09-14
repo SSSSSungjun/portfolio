@@ -12,9 +12,7 @@
   --canvas: #f3f7f5;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html {
   -webkit-print-color-adjust: exact;
@@ -41,9 +39,66 @@ a:hover {
   text-decoration: underline;
 }
 
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100% - 40px, 980px);
+  margin: 0 auto;
+  padding: 18px 0;
+  background: color-mix(in srgb, var(--canvas) 90%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.site-nav a {
+  color: inherit;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.print-button {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--primary-line);
+  border-radius: 7px;
+  background: var(--paper);
+  color: var(--primary-strong);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.print-button:hover {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
 .resume {
   width: min(100%, 980px);
-  margin: 44px auto;
+  margin: 12px auto 44px;
   padding: 72px 78px 84px;
   background: var(--paper);
   box-shadow: 0 16px 50px rgba(22, 56, 43, 0.08);
@@ -69,9 +124,7 @@ a:hover {
 h1,
 h2,
 h3,
-p {
-  margin-top: 0;
-}
+p { margin-top: 0; }
 
 h1 {
   margin-bottom: 14px;
@@ -115,7 +168,7 @@ h1 {
 
 .resume-section > h2 {
   position: sticky;
-  top: 24px;
+  top: 76px;
   align-self: start;
   margin: 0;
   color: var(--primary);
@@ -125,25 +178,17 @@ h1 {
   letter-spacing: -0.01em;
 }
 
-.section-body {
-  min-width: 0;
-}
+.section-body { min-width: 0; }
 
 .entry,
 .project,
-.skill-group {
-  margin-bottom: 34px;
-}
+.skill-group { margin-bottom: 34px; }
 
 .entry:last-child,
 .project:last-child,
-.skill-group:last-child {
-  margin-bottom: 0;
-}
+.skill-group:last-child { margin-bottom: 0; }
 
-.entry.compact {
-  margin-bottom: 28px;
-}
+.entry.compact { margin-bottom: 28px; }
 
 .entry-head {
   display: flex;
@@ -201,9 +246,7 @@ li {
   color: #3d4842;
 }
 
-li::marker {
-  color: var(--primary);
-}
+li::marker { color: var(--primary); }
 
 .skill-groups {
   display: flex;
@@ -263,13 +306,9 @@ li::marker {
   padding-bottom: 0;
 }
 
-.project ul {
-  margin-bottom: 18px;
-}
+.project ul { margin-bottom: 18px; }
 
-.project-tech {
-  align-items: center;
-}
+.project-tech { align-items: center; }
 
 .project-tech strong {
   margin-right: 3px;
@@ -305,9 +344,7 @@ li::marker {
   padding-bottom: 0;
 }
 
-.simple-list strong {
-  color: #2d3732;
-}
+.simple-list strong { color: #2d3732; }
 
 .simple-list span {
   color: var(--muted);
@@ -316,9 +353,21 @@ li::marker {
 }
 
 @media (max-width: 760px) {
-  body {
-    background: var(--paper);
+  body { background: var(--paper); }
+
+  .site-header {
+    width: min(100% - 28px, 980px);
+    padding: 14px 0;
   }
+
+  .site-nav {
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  .brand { font-size: 14px; }
+
+  .print-button { padding: 0 9px; }
 
   .resume {
     margin: 0;
@@ -353,22 +402,15 @@ li::marker {
     gap: 4px;
   }
 
-  .period {
-    margin-top: 0;
-  }
-
-  .two-column-skills {
-    grid-template-columns: 1fr;
-  }
+  .period { margin-top: 0; }
+  .two-column-skills { grid-template-columns: 1fr; }
 
   .simple-list > div {
     flex-direction: column;
     gap: 2px;
   }
 
-  .simple-list span {
-    text-align: left;
-  }
+  .simple-list span { text-align: left; }
 }
 
 @media print {
@@ -376,6 +418,8 @@ li::marker {
     size: A4;
     margin: 13mm 14mm 15mm;
   }
+
+  .site-header { display: none !important; }
 
   body {
     background: #fff;
@@ -395,18 +439,14 @@ li::marker {
     padding-bottom: 24px;
   }
 
-  h1 {
-    font-size: 28pt;
-  }
+  h1 { font-size: 28pt; }
 
   .summary {
     font-size: 10.5pt;
     line-height: 1.65;
   }
 
-  .hero-meta {
-    font-size: 8.5pt;
-  }
+  .hero-meta { font-size: 8.5pt; }
 
   .resume-section {
     grid-template-columns: 34mm minmax(0, 1fr);
@@ -421,9 +461,7 @@ li::marker {
 
   .entry,
   .project,
-  .skill-group {
-    break-inside: avoid;
-  }
+  .skill-group { break-inside: avoid; }
 
   .project {
     padding-bottom: 6mm;
@@ -431,20 +469,14 @@ li::marker {
   }
 
   .entry-head h3,
-  .skill-group h3 {
-    font-size: 11pt;
-  }
+  .skill-group h3 { font-size: 11pt; }
 
-  .project .entry-head h3 {
-    font-size: 11.5pt;
-  }
+  .project .entry-head h3 { font-size: 11.5pt; }
 
   .project .entry-head h3 span,
   .role,
   .period,
-  .simple-list span {
-    font-size: 8.5pt;
-  }
+  .simple-list span { font-size: 8.5pt; }
 
   .tags span,
   .project-tech span {
@@ -453,9 +485,7 @@ li::marker {
     font-size: 7.7pt;
   }
 
-  .project-tech strong {
-    font-size: 7.4pt;
-  }
+  .project-tech strong { font-size: 7.4pt; }
 
   a {
     color: var(--primary) !important;
