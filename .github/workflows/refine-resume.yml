@@ -1,0 +1,190 @@
+name: Refine resume styling
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/refine-resume.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+
+      - name: Refine resume layout
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          replacements = {
+              Path('index.html'): ('<a class="brand" href="../portfolio/">윤성준</a>', '<a class="brand" href="../portfolio/">윤성준 포트폴리오 및 이력서</a>'),
+              Path('resume/index.html'): ('<a class="brand" href="../portfolio/">윤성준</a>', '<a class="brand" href="../portfolio/">윤성준 포트폴리오 및 이력서</a>'),
+              Path('portfolio/index.html'): ('<a class="brand" href="./">윤성준</a>', '<a class="brand" href="./">윤성준 포트폴리오 및 이력서</a>'),
+          }
+          for path, (old, new) in replacements.items():
+              text = path.read_text(encoding='utf-8')
+              if old not in text:
+                  raise SystemExit(f'brand target not found: {path}')
+              path.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          override = r'''
+
+/* Resume readability refinements */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  position: relative;
+  padding-left: 1.05em;
+}
+
+li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  color: #59645e;
+  font-weight: 500;
+}
+
+li::marker { content: ""; }
+
+.skill-groups {
+  gap: 22px;
+}
+
+.skill-group {
+  margin-bottom: 0;
+}
+
+.skill-group h3 {
+  margin-bottom: 6px;
+  color: #26302b;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.tags {
+  display: block;
+  line-height: 1.9;
+}
+
+.tags span,
+.primary-tags span {
+  display: inline;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #59635e;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: inherit;
+}
+
+.tags span + span::before {
+  content: " · ";
+  color: #a0aaa4;
+  font-weight: 400;
+}
+
+.two-column-skills {
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.project-tech {
+  display: block;
+  margin-top: 14px;
+  line-height: 1.8;
+}
+
+.project-tech strong {
+  margin-right: 10px;
+  color: #2d3732;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.project-tech span {
+  display: inline;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #66706b;
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: inherit;
+}
+
+.project-tech span + span::before {
+  content: " · ";
+  color: #a0aaa4;
+  font-weight: 400;
+}
+
+@media (max-width: 760px) {
+  .brand {
+    max-width: 185px;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}
+
+@media print {
+  .tags span,
+  .primary-tags span,
+  .project-tech span {
+    font-size: 7.7pt;
+  }
+
+  .project-tech strong {
+    font-size: 8pt;
+  }
+}
+'''
+
+          for path in (Path('style.css'), Path('resume/style.css')):
+              text = path.read_text(encoding='utf-8')
+              marker = '/* Resume readability refinements */'
+              if marker in text:
+                  text = text.split(marker, 1)[0].rstrip() + '\n'
+              path.write_text(text.rstrip() + override, encoding='utf-8')
+          PY
+
+      - name: Commit gh-pages changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html resume/index.html portfolio/index.html style.css resume/style.css
+          git commit -m "Refine resume typography and tech layout"
+          git push origin gh-pages
+
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Remove one-shot workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/refine-resume.yml
+          git commit -m "Remove temporary resume styling workflow"
+          git push origin master
