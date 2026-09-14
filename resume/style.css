@@ -500,14 +500,13 @@ li::marker { color: var(--primary); }
 
 /* Resume readability refinements */
 .brand {
-  font-size: 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
 }
 
-.brand::after {
-  content: "윤성준 포트폴리오 및 이력서";
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+.site-header {
+  width: min(100% - 72px, 980px);
 }
 
 ul {
@@ -531,7 +530,7 @@ li::before {
 li::marker { content: ""; }
 
 .skill-groups {
-  gap: 22px;
+  gap: 26px;
 }
 
 .skill-group {
@@ -539,40 +538,33 @@ li::marker { content: ""; }
 }
 
 .skill-group h3 {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   color: #26302b;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 800;
 }
 
-.tags {
-  display: block;
-  line-height: 1.9;
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 9px;
 }
 
-.tags span,
-.primary-tags span {
-  display: inline;
-  min-height: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
+.skill-badges img {
+  height: 22px;
+  max-width: 100%;
+}
+
+.skill-list {
+  margin: 0;
+}
+
+.skill-list li {
+  margin: 2px 0;
   color: #59635e;
   font-size: 13px;
   font-weight: 400;
-  line-height: inherit;
-}
-
-.tags span + span::before {
-  content: " · ";
-  color: #a0aaa4;
-  font-weight: 400;
-}
-
-.two-column-skills {
-  grid-template-columns: 1fr;
-  gap: 18px;
 }
 
 .project-tech {
@@ -610,14 +602,23 @@ li::marker { content: ""; }
 }
 
 @media (max-width: 760px) {
-  .brand::after {
-    font-size: 12px;
+  .site-header {
+    width: min(100% - 40px, 980px);
+  }
+
+  .brand {
+    max-width: 230px;
+    font-size: 14px;
+    line-height: 1.25;
   }
 }
 
 @media print {
-  .tags span,
-  .primary-tags span,
+  .skill-badges img {
+    height: 16px;
+  }
+
+  .skill-list li,
   .project-tech span {
     font-size: 7.7pt;
   }
