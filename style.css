@@ -490,3 +490,79 @@ li::before {
 @media print {
   .resume { margin-top: 0; }
 }
+
+/* Resume project structure refinement */
+.tech-stack-section,
+.projects-section {
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+.project .entry-head {
+  margin-bottom: 10px;
+}
+
+.project .entry-head h3 {
+  margin-bottom: 0;
+}
+
+.project-label {
+  margin: 13px 0 5px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.project .entry-head + .project-label {
+  margin-top: 0;
+}
+
+.project-description {
+  margin: 0;
+  color: #3d4842;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.project ul {
+  margin-bottom: 0;
+}
+
+.project-tech-heading {
+  margin-top: 13px;
+}
+
+.project-tech-list {
+  margin: 0;
+  color: #3d4842;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+@media (max-width: 760px) {
+  .tech-stack-section,
+  .projects-section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media print {
+  .tech-stack-section,
+  .projects-section {
+    padding-top: 6mm;
+    padding-bottom: 6mm;
+  }
+
+  .project-label {
+    margin: 2mm 0 0.8mm;
+    font-size: 8.5pt;
+  }
+
+  .project-description,
+  .project-tech-list {
+    font-size: 8.5pt;
+    line-height: 1.45;
+  }
+}
