@@ -27,7 +27,7 @@
   --font-size-summary: 16px;
   --font-size-eyebrow: 14px;
   --font-size-contact: 13px;
-  --font-size-contact-label: 14px;
+  --font-size-contact-label: 13px;
   --contact-label-width: 52px;
   --font-size-contact-icon: 17px;
   --contact-item-gap: 10px;
@@ -674,13 +674,13 @@ h1 {
   flex: 0 0 var(--contact-label-width);
   color: var(--color-primary);
   font-size: var(--font-size-contact-label);
-  font-weight: var(--font-weight-extra-bold);
+  font-weight: var(--font-weight-regular);
   text-align: right;
 }
 
 @media (max-width: 760px) {
   :root {
-    --font-size-contact-label: 13.5px;
+    --font-size-contact-label: 12.5px;
     --contact-label-width: 50px;
   }
 
@@ -695,7 +695,7 @@ h1 {
 
 @media print {
   :root {
-    --font-size-contact-label: 9pt;
+    --font-size-contact-label: 8pt;
     --contact-label-width: 12mm;
   }
 }
