@@ -211,6 +211,10 @@ h1 {
   line-height: 1.8;
 }
 
+.summary-sentence {
+  display: block;
+}
+
 .hero-meta {
   display: flex;
   flex-direction: column;
