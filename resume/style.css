@@ -462,3 +462,71 @@ li::before {
     text-decoration: none !important;
   }
 }
+
+/* Project readability hierarchy */
+.project .entry-head {
+  margin-bottom: 9px;
+}
+
+.project-tech {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 9px;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+.project-tech strong {
+  flex: 0 0 auto;
+  color: var(--primary-strong);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.project-intro {
+  margin: 0 0 13px;
+  color: #303b35;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.project li {
+  margin: 6px 0;
+}
+
+.project li strong {
+  color: #26312b;
+  font-weight: 800;
+}
+
+@media (max-width: 760px) {
+  .project-tech {
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media print {
+  .project-tech {
+    margin-bottom: 2mm;
+    font-size: 8.2pt;
+  }
+
+  .project-tech strong {
+    font-size: 7.8pt;
+  }
+
+  .project-intro {
+    margin-bottom: 2.5mm;
+    font-size: 9.2pt;
+    line-height: 1.5;
+  }
+
+  .project li {
+    margin: 1.1mm 0;
+  }
+}
