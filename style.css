@@ -1,10 +1,10 @@
 :root {
   --primary: #12945f;
   --primary-strong: #0b7147;
-  --text: #1f2723;
-  --muted: #65716b;
-  --subtle: #89948e;
-  --line: #e6ece8;
+  --text: #171b19;
+  --muted: #4f5753;
+  --subtle: #717874;
+  --line: #dde3df;
   --paper: #ffffff;
   --canvas: #fafbfa;
 }
@@ -21,7 +21,7 @@ body {
   background: var(--canvas);
   color: var(--text);
   font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", Inter, Arial, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.68;
   word-break: keep-all;
 }
@@ -36,7 +36,7 @@ a {
 .resume {
   width: min(100%, 1040px);
   margin: 16px auto 40px;
-  padding: 58px 36px 64px;
+  padding: 58px 32px 64px;
   background: var(--paper);
   box-shadow: 0 10px 28px rgba(20, 28, 24, 0.035);
 }
@@ -53,27 +53,27 @@ a {
 .eyebrow {
   margin: 0 0 8px;
   color: var(--primary);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
 }
 
-h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3, h4, p { margin-top: 0; }
 
 h1 {
   margin-bottom: 12px;
-  color: #18211d;
+  color: #111513;
   font-size: 42px;
   line-height: 1.15;
   letter-spacing: -0.045em;
 }
 
 .summary {
-  max-width: 700px;
+  max-width: 720px;
   margin-bottom: 0;
-  color: #3f4a45;
-  font-size: 16px;
-  line-height: 1.75;
+  color: #2d3430;
+  font-size: 17px;
+  line-height: 1.72;
 }
 
 .hero-meta {
@@ -82,8 +82,8 @@ h1 {
   align-items: flex-end;
   gap: 5px;
   padding-bottom: 3px;
-  color: var(--muted);
-  font-size: 13px;
+  color: #424a46;
+  font-size: 14px;
   white-space: nowrap;
 }
 
@@ -106,7 +106,7 @@ h1 {
   align-self: start;
   margin: 0;
   color: var(--primary);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 800;
   line-height: 1.4;
   letter-spacing: -0.01em;
@@ -114,9 +114,9 @@ h1 {
 
 .section-body { min-width: 0; }
 
-.entry, .project { margin-bottom: 26px; }
+.entry, .project { margin-bottom: 28px; }
 .entry:last-child, .project:last-child { margin-bottom: 0; }
-.entry.compact { margin-bottom: 20px; }
+.entry.compact { margin-bottom: 22px; }
 
 .entry-head {
   display: flex;
@@ -128,8 +128,8 @@ h1 {
 
 .entry-head h3 {
   margin-bottom: 4px;
-  color: #26302b;
-  font-size: 19px;
+  color: #171b19;
+  font-size: 20px;
   line-height: 1.4;
   letter-spacing: -0.025em;
 }
@@ -137,15 +137,15 @@ h1 {
 .role {
   margin-bottom: 0;
   color: var(--primary);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 .period {
   flex: 0 0 auto;
   margin: 3px 0 0;
-  color: var(--subtle);
-  font-size: 12px;
+  color: #5c645f;
+  font-size: 13px;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -158,16 +158,17 @@ ul {
 
 li {
   position: relative;
-  margin: 4px 0;
+  margin: 5px 0;
   padding-left: 1.05em;
-  color: #3d4842;
+  color: #252b28;
+  font-size: 15.5px;
 }
 
 li::before {
   content: "-";
   position: absolute;
   left: 0;
-  color: #59645e;
+  color: #444c48;
   font-weight: 500;
 }
 
@@ -182,8 +183,8 @@ li::before {
   grid-template-columns: 128px minmax(0, 1fr);
   gap: 18px;
   align-items: start;
-  padding: 12px 0;
-  border-bottom: 1px solid #eef2ef;
+  padding: 13px 0;
+  border-bottom: 1px solid #e7ece9;
 }
 
 .skill-group:first-child { padding-top: 0; }
@@ -194,8 +195,8 @@ li::before {
 
 .skill-group h3 {
   margin: 1px 0 0;
-  color: #26302b;
-  font-size: 15px;
+  color: #181d1a;
+  font-size: 16px;
   font-weight: 800;
   line-height: 1.4;
   letter-spacing: -0.02em;
@@ -209,20 +210,20 @@ li::before {
 }
 
 .skill-badges img {
-  height: 23px;
+  height: 25px;
   max-width: 100%;
 }
 
 /* Projects */
 .projects-section {
-  font-size: 14.5px;
+  font-size: 15.5px;
   line-height: 1.62;
 }
 
 .project {
   position: relative;
-  padding: 0 0 20px;
-  margin-bottom: 20px;
+  padding: 0 0 26px;
+  margin-bottom: 28px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -231,82 +232,73 @@ li::before {
   padding-bottom: 0;
 }
 
-.project .entry-head {
-  margin-bottom: 8px;
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 13px;
 }
 
-.project .entry-head h3 {
-  margin-bottom: 3px;
-  color: #1f2522;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.35;
-  letter-spacing: -0.02em;
-}
-
-.project .entry-head h3 span {
-  margin-left: 7px;
-  color: #777f7b;
-  font-size: 13px;
-  font-weight: 400;
-}
-
-.project-intro {
+.project-head h3 {
   margin: 0;
-  color: #5d6661;
-  font-size: 13.5px;
-  font-weight: 400;
-  line-height: 1.5;
+  color: #111513;
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
 }
 
-.project .period {
+.project-head .period {
   margin-top: 4px;
-  font-size: 12px;
-  font-weight: 500;
+}
+
+.project-label {
+  margin: 14px 0 5px;
+  color: #151a17;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.project-head + .project-label {
+  margin-top: 0;
+}
+
+.project-description {
+  margin: 0;
+  color: #252b28;
+  font-size: 15.5px;
+  font-weight: 400;
+  line-height: 1.65;
 }
 
 .project ul {
-  margin-top: 8px;
-  margin-bottom: 7px;
+  margin: 0;
 }
 
 .project li {
-  margin: 4px 0;
-  padding-left: 1em;
-  color: #363e3a;
-  line-height: 1.6;
-}
-
-.project li::before {
-  color: #6f7773;
-  font-weight: 400;
+  margin: 5px 0;
+  color: #222825;
+  font-size: 15.5px;
+  line-height: 1.62;
 }
 
 .project li strong {
-  color: #202622;
+  color: #151a17;
   font-weight: 700;
 }
 
-.project-tech {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  margin-top: 8px;
-}
-
-.project-tech-label {
-  flex: 0 0 auto;
-  color: var(--primary);
-  font-size: 15px;
-  font-weight: 800;
-  line-height: 1.5;
+.project-tech-heading {
+  margin-top: 16px;
 }
 
 .project-tech-list {
-  color: #5d6661;
-  font-size: 13.5px;
+  margin: 0;
+  color: #252b28;
+  font-size: 15.5px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* Certifications */
@@ -320,7 +312,7 @@ li::before {
   justify-content: space-between;
   gap: 18px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #eef2ef;
+  border-bottom: 1px solid #e7ece9;
 }
 
 .simple-list > div:last-child {
@@ -328,16 +320,22 @@ li::before {
   padding-bottom: 0;
 }
 
-.simple-list strong { color: #2d3732; }
+.simple-list strong {
+  color: #171b19;
+  font-size: 15.5px;
+}
 
 .simple-list span {
-  color: var(--muted);
-  font-size: 13px;
+  color: #424a46;
+  font-size: 14px;
   text-align: right;
 }
 
 @media (max-width: 760px) {
-  body { background: var(--paper); }
+  body {
+    background: var(--paper);
+    font-size: 15px;
+  }
 
   .resume {
     margin: 0;
@@ -367,7 +365,8 @@ li::before {
     font-size: 16px;
   }
 
-  .entry-head {
+  .entry-head,
+  .project-head {
     flex-direction: column;
     gap: 4px;
   }
@@ -389,12 +388,11 @@ li::before {
 
   .simple-list span { text-align: left; }
 
-  .project .entry-head h3 { font-size: 19px; }
-
-  .project-tech {
-    align-items: flex-start;
-    gap: 8px;
-  }
+  .project-head h3 { font-size: 21px; }
+  .project-label { font-size: 16px; }
+  .project-description,
+  .project li,
+  .project-tech-list { font-size: 15px; }
 }
 
 @media print {
@@ -458,31 +456,30 @@ li::before {
   .skill-badges img { height: 16px; }
 
   .project {
-    padding-bottom: 3.8mm;
-    margin-bottom: 3.8mm;
+    padding-bottom: 4mm;
+    margin-bottom: 4mm;
   }
 
-  .project .entry-head h3 { font-size: 11pt; }
-  .project .entry-head h3 span,
-  .project .period { font-size: 8.3pt; }
+  .project-head {
+    margin-bottom: 2mm;
+  }
 
-  .project-intro {
+  .project-head h3 { font-size: 12pt; }
+  .project-head .period { font-size: 8.3pt; }
+
+  .project-label {
+    margin: 2.2mm 0 0.8mm;
+    font-size: 9pt;
+  }
+
+  .project-description,
+  .project li,
+  .project-tech-list {
     font-size: 8.4pt;
-    line-height: 1.4;
-  }
-
-  .project li {
-    margin: 0.7mm 0;
     line-height: 1.45;
   }
 
-  .project-tech {
-    gap: 2mm;
-    margin-top: 1.2mm;
-  }
-
-  .project-tech-label { font-size: 8.5pt; }
-  .project-tech-list { font-size: 8pt; }
+  .project li { margin: 0.7mm 0; }
 
   a {
     color: var(--primary) !important;
