@@ -1,17 +1,105 @@
+/* =========================================================
+   Resume Design System
+   - Change tokens first. Do not append one-off overrides.
+   - Components consume tokens; section variants only override variables.
+   ========================================================= */
+
+/* 1. DESIGN TOKENS */
 :root {
-  --primary: #1f7a5c;
-  --primary-strong: #14543f;
-  --primary-soft: #edf7f2;
-  --primary-line: #cfe4d9;
-  --text: #1f2723;
-  --muted: #65716b;
-  --subtle: #89948e;
-  --line: #e6ece8;
-  --paper: #ffffff;
-  --canvas: #f7f8f7;
+  /* Colors */
+  --color-primary: #12945f;
+  --color-primary-strong: #0b7147;
+  --color-primary-soft: #effaf4;
+  --color-text: #1f2723;
+  --color-text-heading: #1c2722;
+  --color-text-body: #3d4842;
+  --color-text-muted: #65716b;
+  --color-text-subtle: #89948e;
+  --color-line: #e6ece8;
+  --color-line-soft: #eef2ef;
+  --color-paper: #ffffff;
+  --color-canvas: #fafbfa;
+
+  /* Typography */
+  --font-family-base: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", Inter, Arial, sans-serif;
+
+  --font-size-name: 42px;
+  --font-size-summary: 16px;
+  --font-size-body: 15px;
+  --font-size-section-title: 16px;
+  --font-size-item-title: 21px;
+  --font-size-project-title: 23px;
+  --font-size-skill-title: 18px;
+  --font-size-accent: 15px;
+  --font-size-date: 13px;
+  --font-size-meta: 15px;
+  --font-size-credential-title: 16px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+
+  --line-height-body: 1.72;
+  --line-height-heading: 1.4;
+  --line-height-project-title: 1.4;
+  --line-height-project-body: 1.65;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 6px;
+  --space-3: 8px;
+  --space-4: 10px;
+  --space-5: 12px;
+  --space-6: 14px;
+  --space-7: 16px;
+  --space-8: 18px;
+  --space-9: 20px;
+  --space-10: 24px;
+  --space-11: 28px;
+  --space-12: 30px;
+  --space-13: 34px;
+  --space-14: 38px;
+  --space-15: 42px;
+  --space-16: 48px;
+  --space-17: 50px;
+
+  /* Page layout */
+  --page-max-width: 980px;
+  --page-padding-top: 72px;
+  --page-padding-x: 78px;
+  --page-padding-bottom: 84px;
+  --page-margin-top: 20px;
+  --page-margin-bottom: 44px;
+
+  /* Section layout */
+  --section-label-width: 132px;
+  --section-column-gap: 30px;
+  --section-padding-y: 50px;
+  --section-padding-y-compact: 34px;
+
+  /* Component rhythm */
+  --entry-gap: 34px;
+  --entry-gap-compact: 28px;
+  --entry-header-gap: 24px;
+  --project-gap: 38px;
+  --project-divider-padding: 38px;
+  --project-block-gap: 20px;
+  --project-label-body-gap: 6px;
+  --skill-row-label-width: 132px;
+  --skill-row-gap: 18px;
+
+  /* Optical alignment */
+  --section-title-offset-default: 4px;
+  --section-title-offset-tech: 2px;
+  --section-title-offset-projects: 5px;
 }
 
-* { box-sizing: border-box; }
+/* 2. BASE */
+* {
+  box-sizing: border-box;
+}
 
 html {
   -webkit-print-color-adjust: exact;
@@ -20,205 +108,30 @@ html {
 
 body {
   margin: 0;
-  background: var(--canvas);
-  color: var(--text);
-  font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", Inter, Arial, sans-serif;
-  font-size: 15px;
-  line-height: 1.72;
+  background: var(--color-canvas);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   word-break: keep-all;
 }
 
 a {
-  color: var(--primary);
+  color: var(--color-primary);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--primary-strong);
+  color: var(--color-primary-strong);
   text-decoration: underline;
-}
-
-.site-header {
-  position: static;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: min(100% - 40px, 1380px);
-  margin: 0 auto;
-  padding: 18px 0 16px;
-  background: transparent;
-}
-
-.brand { display: none; }
-
-.site-nav {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.site-nav a {
-  padding: 8px 13px;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  color: #6b737b;
-}
-
-.site-nav a:hover {
-  border-color: #e3e6e8;
-  background: #fff;
-  color: var(--text);
-  text-decoration: none;
-}
-
-.site-nav a.active {
-  border-color: #d9dedb;
-  background: #fff;
-  color: var(--primary-strong);
-  text-decoration: none;
-}
-
-.site-nav > a[href^="https://github.com"],
-.print-button { display: none; }
-
-.resume {
-  width: min(100%, 980px);
-  margin: 0 auto 44px;
-  padding: 72px 78px 84px;
-  background: var(--paper);
-  box-shadow: 0 10px 28px rgba(20, 28, 24, 0.035);
-}
-
-.hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 48px;
-  align-items: end;
-  padding-bottom: 42px;
-  border-bottom: 2px solid var(--primary);
-}
-
-.eyebrow {
-  margin: 0 0 8px;
-  color: var(--primary);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.16em;
 }
 
 h1,
 h2,
 h3,
-p { margin-top: 0; }
-
-h1 {
-  margin-bottom: 14px;
-  color: #18211d;
-  font-size: 42px;
-  line-height: 1.15;
-  letter-spacing: -0.045em;
-}
-
-.summary {
-  max-width: 680px;
-  margin-bottom: 0;
-  color: #3f4a45;
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-.hero-meta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-  padding-bottom: 3px;
-  color: var(--muted);
-  font-size: 13px;
-  white-space: nowrap;
-}
-
-.resume-section {
-  display: grid;
-  grid-template-columns: 170px minmax(0, 1fr);
-  gap: 42px;
-  padding: 50px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.resume-section:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
-.resume-section > h2 {
-  position: sticky;
-  top: 24px;
-  align-self: start;
-  margin: 0;
-  color: var(--primary);
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
-}
-
-.section-body { min-width: 0; }
-
-.entry,
-.project { margin-bottom: 34px; }
-
-.entry:last-child,
-.project:last-child { margin-bottom: 0; }
-
-.entry.compact { margin-bottom: 28px; }
-
-.entry-head {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  align-items: flex-start;
-  margin-bottom: 14px;
-}
-
-.entry-head h3 {
-  margin-bottom: 4px;
-  color: #26302b;
-  font-size: 19px;
-  line-height: 1.4;
-  letter-spacing: -0.025em;
-}
-
-.project .entry-head h3 {
-  margin-bottom: 5px;
-  color: #1c2722;
-  font-size: 21px;
-}
-
-.project .entry-head h3 span {
-  margin-left: 6px;
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.role {
-  margin-bottom: 0;
-  color: var(--primary);
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.period {
-  flex: 0 0 auto;
-  margin: 3px 0 0;
-  color: var(--subtle);
-  font-size: 12px;
-  font-weight: 600;
-  white-space: nowrap;
+h4,
+p {
+  margin-top: 0;
 }
 
 ul {
@@ -229,9 +142,9 @@ ul {
 
 li {
   position: relative;
-  margin: 4px 0;
+  margin: var(--space-1) 0;
   padding-left: 1.05em;
-  color: #3d4842;
+  color: var(--color-text-body);
 }
 
 li::before {
@@ -239,9 +152,166 @@ li::before {
   position: absolute;
   left: 0;
   color: #59645e;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
+/* Public resume has no navigation chrome. */
+.site-header {
+  display: none !important;
+}
+
+/* 3. PAGE COMPONENTS */
+.resume {
+  width: min(100%, var(--page-max-width));
+  margin: var(--page-margin-top) auto var(--page-margin-bottom);
+  padding:
+    var(--page-padding-top)
+    var(--page-padding-x)
+    var(--page-padding-bottom);
+  background: var(--color-paper);
+  box-shadow: 0 10px 28px rgba(20, 28, 24, 0.035);
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-16);
+  align-items: end;
+  padding-bottom: var(--space-15);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-3);
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: var(--font-weight-extra-bold);
+  letter-spacing: 0.16em;
+}
+
+h1 {
+  margin-bottom: var(--space-6);
+  color: #18211d;
+  font-size: var(--font-size-name);
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+
+.summary {
+  max-width: 680px;
+  margin-bottom: 0;
+  color: #3f4a45;
+  font-size: var(--font-size-summary);
+  line-height: 1.8;
+}
+
+.hero-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-2);
+  padding-bottom: 3px;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-meta);
+  white-space: nowrap;
+}
+
+/* Resume section */
+.resume-section {
+  --section-current-padding-y: var(--section-padding-y);
+  --section-title-offset: var(--section-title-offset-default);
+
+  display: grid;
+  grid-template-columns: var(--section-label-width) minmax(0, 1fr);
+  column-gap: var(--section-column-gap);
+  align-items: start;
+  padding: var(--section-current-padding-y) 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.resume-section:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.resume-section > h2 {
+  position: sticky;
+  top: var(--space-10);
+  align-self: start;
+  margin: 0;
+  padding-top: var(--section-title-offset);
+  color: var(--color-primary);
+  font-size: var(--font-size-section-title);
+  font-weight: var(--font-weight-extra-bold);
+  line-height: var(--line-height-heading);
+  letter-spacing: -0.01em;
+}
+
+.section-body {
+  min-width: 0;
+}
+
+/* Section variants */
+.tech-stack-section {
+  --section-current-padding-y: var(--section-padding-y-compact);
+  --section-title-offset: var(--section-title-offset-tech);
+}
+
+.projects-section {
+  --section-current-padding-y: var(--section-padding-y-compact);
+  --section-title-offset: var(--section-title-offset-projects);
+}
+
+/* 4. REUSABLE CONTENT COMPONENTS */
+
+/* Entry: Experience / Education / Awards */
+.entry {
+  margin-bottom: var(--entry-gap);
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry.compact {
+  margin-bottom: var(--entry-gap-compact);
+}
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--entry-header-gap);
+  align-items: flex-start;
+  margin-bottom: var(--space-6);
+}
+
+.entry-head h3 {
+  margin-bottom: var(--space-1);
+  color: #26302b;
+  font-size: var(--font-size-item-title);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+  letter-spacing: -0.025em;
+}
+
+.role {
+  margin-bottom: 0;
+  color: var(--color-primary);
+  font-size: var(--font-size-accent);
+  font-weight: var(--font-weight-bold);
+}
+
+.period {
+  flex: 0 0 auto;
+  margin: 3px 0 0;
+  color: var(--color-text-subtle);
+  font-size: var(--font-size-date);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+/* Skill row */
 .skill-groups {
   display: flex;
   flex-direction: column;
@@ -249,14 +319,17 @@ li::before {
 
 .skill-group {
   display: grid;
-  grid-template-columns: 132px minmax(0, 1fr);
-  gap: 18px;
+  grid-template-columns: var(--skill-row-label-width) minmax(0, 1fr);
+  gap: var(--skill-row-gap);
   align-items: start;
-  padding: 16px 0;
-  border-bottom: 1px solid #eef2ef;
+  padding: var(--space-7) 0;
+  border-bottom: 1px solid var(--color-line-soft);
 }
 
-.skill-group:first-child { padding-top: 0; }
+.skill-group:first-child {
+  padding-top: 0;
+}
+
 .skill-group:last-child {
   padding-bottom: 0;
   border-bottom: 0;
@@ -265,9 +338,9 @@ li::before {
 .skill-group h3 {
   margin: 1px 0 0;
   color: #26302b;
-  font-size: 16px;
-  font-weight: 800;
-  line-height: 1.4;
+  font-size: var(--font-size-skill-title);
+  font-weight: var(--font-weight-extra-bold);
+  line-height: var(--line-height-heading);
   letter-spacing: -0.02em;
 }
 
@@ -282,66 +355,127 @@ li::before {
   max-width: 100%;
 }
 
+/* Project */
 .project {
   position: relative;
-  padding: 0 0 38px;
-  margin-bottom: 38px;
-  border-bottom: 1px solid var(--line);
+  padding: 0 0 var(--project-divider-padding);
+  margin-bottom: var(--project-gap);
+  border-bottom: 1px solid var(--color-line);
 }
 
 .project:last-child {
-  border-bottom: 0;
   padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
 }
 
-.project ul { margin-bottom: 0; }
+.project .entry-head {
+  align-items: baseline;
+  margin-bottom: 0;
+}
 
+.project .entry-head > div {
+  min-width: 0;
+}
+
+.project .entry-head h3 {
+  margin: 0;
+  color: var(--color-text-heading);
+  font-size: var(--font-size-project-title);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-project-title);
+  letter-spacing: -0.025em;
+}
+
+.project .period {
+  margin: 0;
+  line-height: var(--line-height-project-title);
+}
+
+.project-label {
+  margin:
+    var(--project-block-gap)
+    0
+    var(--project-label-body-gap);
+  color: var(--color-primary);
+  font-size: var(--font-size-accent);
+  font-weight: var(--font-weight-extra-bold);
+  line-height: var(--line-height-heading);
+}
+
+.project-description,
+.project-tech-list {
+  margin: 0;
+  color: var(--color-text-body);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-project-body);
+}
+
+.project ul {
+  margin: 0;
+}
+
+.project-tech-heading {
+  margin-top: var(--project-block-gap);
+}
+
+/* Credential list */
 .simple-list {
   display: grid;
-  gap: 12px;
+  gap: var(--space-5);
 }
 
 .simple-list > div {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eef2ef;
+  gap: var(--space-9);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-line-soft);
 }
 
 .simple-list > div:last-child {
-  border-bottom: 0;
   padding-bottom: 0;
+  border-bottom: 0;
 }
 
-.simple-list strong { color: #2d3732; }
+.simple-list strong {
+  color: #2d3732;
+  font-size: var(--font-size-credential-title);
+}
 
 .simple-list span {
-  color: var(--muted);
-  font-size: 13px;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-meta);
   text-align: right;
 }
 
+/* 5. RESPONSIVE TOKENS */
 @media (max-width: 760px) {
-  body { background: var(--paper); }
+  :root {
+    --page-padding-top: 38px;
+    --page-padding-x: 24px;
+    --page-padding-bottom: 56px;
+    --page-margin-top: 0;
+    --page-margin-bottom: 0;
 
-  .site-header {
-    width: 100%;
-    padding: 12px 18px;
+    --section-padding-y: 38px;
+    --section-padding-y-compact: 30px;
+    --section-column-gap: 18px;
+
+    --font-size-section-title: 17px;
+    --font-size-item-title: 20px;
+    --font-size-project-title: 21px;
+    --font-size-skill-title: 17px;
+    --font-size-accent: 14px;
+    --font-size-date: 13px;
+    --font-size-meta: 14px;
   }
 
-  .site-nav {
-    gap: 8px;
-    font-size: 12px;
-  }
-
-  .site-nav a {
-    padding: 7px 10px;
+  body {
+    background: var(--color-paper);
   }
 
   .resume {
-    margin: 0;
-    padding: 38px 24px 56px;
     box-shadow: none;
   }
 
@@ -358,26 +492,31 @@ li::before {
 
   .resume-section {
     grid-template-columns: 1fr;
-    gap: 22px;
-    padding: 38px 0;
+    row-gap: 18px;
   }
 
   .resume-section > h2 {
     position: static;
-    font-size: 16px;
+    padding-top: 0;
   }
 
   .entry-head {
     flex-direction: column;
-    gap: 4px;
+    gap: var(--space-1);
   }
 
-  .period { margin-top: 0; }
+  .period {
+    margin-top: 0;
+  }
 
   .skill-group {
     grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 14px 0;
+    gap: var(--space-3);
+    padding: var(--space-6) 0;
+  }
+
+  .project .entry-head {
+    align-items: flex-start;
   }
 
   .simple-list > div {
@@ -385,20 +524,51 @@ li::before {
     gap: 2px;
   }
 
-  .simple-list span { text-align: left; }
+  .simple-list span {
+    text-align: left;
+  }
 }
 
+/* 6. PRINT TOKENS */
 @media print {
   @page {
     size: A4;
     margin: 13mm 14mm 15mm;
   }
 
-  .site-header { display: none !important; }
+  :root {
+    --font-size-name: 28pt;
+    --font-size-summary: 10.5pt;
+    --font-size-body: 10pt;
+    --font-size-section-title: 9.5pt;
+    --font-size-item-title: 11.5pt;
+    --font-size-project-title: 12pt;
+    --font-size-skill-title: 9.5pt;
+    --font-size-accent: 9pt;
+    --font-size-date: 8.5pt;
+    --font-size-meta: 9pt;
+    --font-size-credential-title: 9pt;
+
+    --section-label-width: 28mm;
+    --section-column-gap: 6mm;
+    --section-padding-y: 8mm;
+    --section-padding-y-compact: 6mm;
+
+    --project-gap: 6mm;
+    --project-divider-padding: 6mm;
+    --project-block-gap: 3mm;
+    --project-label-body-gap: 1mm;
+
+    --skill-row-label-width: 28mm;
+    --skill-row-gap: 4mm;
+
+    --section-title-offset-default: 0;
+    --section-title-offset-tech: 0;
+    --section-title-offset-projects: 0;
+  }
 
   body {
     background: #fff;
-    font-size: 10pt;
     line-height: 1.55;
   }
 
@@ -414,360 +584,35 @@ li::before {
     padding-bottom: 24px;
   }
 
-  h1 { font-size: 28pt; }
-
   .summary {
-    font-size: 10.5pt;
     line-height: 1.65;
-  }
-
-  .hero-meta { font-size: 8.5pt; }
-
-  .resume-section {
-    grid-template-columns: 34mm minmax(0, 1fr);
-    gap: 8mm;
-    padding: 8mm 0;
   }
 
   .resume-section > h2 {
     position: static;
-    font-size: 9pt;
   }
 
   .entry,
   .project,
-  .skill-group { break-inside: avoid; }
-
-  .project {
-    padding-bottom: 6mm;
-    margin-bottom: 6mm;
+  .skill-group {
+    break-inside: avoid;
   }
 
-  .entry-head h3 { font-size: 11pt; }
-  .project .entry-head h3 { font-size: 11.5pt; }
-
-  .project .entry-head h3 span,
-  .role,
-  .period,
-  .simple-list span { font-size: 8.5pt; }
-
   .skill-group {
-    grid-template-columns: 28mm minmax(0, 1fr);
-    gap: 4mm;
     padding: 3mm 0;
   }
 
-  .skill-group h3 { font-size: 9pt; }
-  .skill-badges img { height: 16px; }
-
-  a {
-    color: var(--primary) !important;
-    text-decoration: none !important;
-  }
-}
-
-/* Portfolio and resume are intentionally separate documents. */
-.site-header { display: none !important; }
-.resume { margin-top: 36px; }
-
-/* Visual refinement */
-:root {
-  --primary: #12945f;
-  --primary-strong: #0b7147;
-  --primary-soft: #effaf4;
-  --primary-line: #ccebdc;
-  --canvas: #fafbfa;
-}
-
-.site-header { display: none !important; }
-.resume { margin-top: 20px; }
-
-@media (max-width: 760px) {
-  body { background: #fff; }
-  .resume { margin-top: 0; }
-}
-
-@media print {
-  .resume { margin-top: 0; }
-}
-
-/* Resume project structure refinement */
-.tech-stack-section,
-.projects-section {
-  padding-top: 34px;
-  padding-bottom: 34px;
-}
-
-.project .entry-head {
-  margin-bottom: 10px;
-}
-
-.project .entry-head h3 {
-  margin-bottom: 0;
-}
-
-.project-label {
-  margin: 13px 0 5px;
-  color: var(--primary);
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 1.4;
-}
-
-.project .entry-head + .project-label {
-  margin-top: 0;
-}
-
-.project-description {
-  margin: 0;
-  color: #3d4842;
-  font-size: 15px;
-  line-height: 1.65;
-}
-
-.project ul {
-  margin-bottom: 0;
-}
-
-.project-tech-heading {
-  margin-top: 13px;
-}
-
-.project-tech-list {
-  margin: 0;
-  color: #3d4842;
-  font-size: 15px;
-  line-height: 1.65;
-}
-
-@media (max-width: 760px) {
-  .tech-stack-section,
-  .projects-section {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-}
-
-@media print {
-  .tech-stack-section,
-  .projects-section {
-    padding-top: 6mm;
-    padding-bottom: 6mm;
-  }
-
-  .project-label {
-    margin: 2mm 0 0.8mm;
-    font-size: 8.5pt;
+  .skill-badges img {
+    height: 16px;
   }
 
   .project-description,
   .project-tech-list {
-    font-size: 8.5pt;
     line-height: 1.45;
   }
-}
 
-/* Global section gap + project rhythm refinement */
-.resume-section {
-  grid-template-columns: 132px minmax(0, 1fr);
-  gap: 30px;
-}
-
-.project .entry-head {
-  align-items: center;
-}
-
-.project .period {
-  margin-top: 0;
-}
-
-.project-label {
-  margin-top: 20px;
-  margin-bottom: 6px;
-  font-size: 15px;
-}
-
-.project .entry-head + .project-label {
-  margin-top: 0;
-}
-
-.project-tech-heading {
-  margin-top: 20px;
-}
-
-@media (max-width: 760px) {
-  .resume-section {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .project .entry-head {
-    align-items: flex-start;
-  }
-}
-
-@media print {
-  .resume-section {
-    grid-template-columns: 28mm minmax(0, 1fr);
-    gap: 6mm;
-  }
-
-  .project-label {
-    margin-top: 3mm;
-    margin-bottom: 1mm;
-    font-size: 9pt;
-  }
-
-  .project-tech-heading {
-    margin-top: 3mm;
-  }
-}
-
-/* Resume heading scale + project rhythm */
-.resume-section > h2 {
-  font-size: 16px;
-}
-
-.project .entry-head h3 {
-  font-size: 23px;
-}
-
-.project .period {
-  font-size: 13px;
-}
-
-.project-label {
-  margin-top: 20px;
-  margin-bottom: 6px;
-}
-
-.project .entry-head + .project-label {
-  margin-top: 20px;
-}
-
-.project-tech-heading {
-  margin-top: 20px;
-}
-
-@media (max-width: 760px) {
-  .resume-section > h2 {
-    font-size: 17px;
-  }
-
-  .project .entry-head h3 {
-    font-size: 21px;
-  }
-
-  .project .period {
-    font-size: 12.5px;
-  }
-}
-
-@media print {
-  .resume-section > h2 {
-    font-size: 9.5pt;
-  }
-
-  .project .entry-head h3 {
-    font-size: 12pt;
-  }
-
-  .project .period {
-    font-size: 8.5pt;
-  }
-
-  .project-label,
-  .project .entry-head + .project-label,
-  .project-tech-heading {
-    margin-top: 3mm;
-  }
-}
-
-/* Resume typography balance */
-.entry-head h3 {
-  font-size: 21px;
-}
-
-.role {
-  font-size: 14px;
-}
-
-.period {
-  font-size: 13px;
-}
-
-.skill-group h3 {
-  font-size: 18px;
-}
-
-.simple-list strong {
-  font-size: 16px;
-}
-
-.simple-list span {
-  font-size: 13px;
-}
-
-@media (max-width: 760px) {
-  .entry-head h3 {
-    font-size: 20px;
-  }
-
-  .skill-group h3 {
-    font-size: 17px;
-  }
-
-  .role,
-  .period {
-    font-size: 13px;
-  }
-}
-
-@media print {
-  .entry-head h3 {
-    font-size: 11.5pt;
-  }
-
-  .skill-group h3 {
-    font-size: 9.5pt;
-  }
-
-  .role,
-  .period,
-  .simple-list span {
-    font-size: 8.5pt;
-  }
-
-  .simple-list strong {
-    font-size: 9pt;
-  }
-}
-
-/* Auxiliary text size alignment */
-.role {
-  font-size: 15px;
-}
-
-.hero-meta {
-  font-size: 15px;
-}
-
-.simple-list span {
-  font-size: 15px;
-}
-
-@media (max-width: 760px) {
-  .role,
-  .hero-meta,
-  .simple-list span {
-    font-size: 14px;
-  }
-}
-
-@media print {
-  .role,
-  .hero-meta,
-  .simple-list span {
-    font-size: 9pt;
+  a {
+    color: var(--color-primary) !important;
+    text-decoration: none !important;
   }
 }
