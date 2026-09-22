@@ -492,69 +492,127 @@ li::before {
 }
 
 /* Project readability hierarchy */
-.project .entry-head {
-  margin-bottom: 9px;
-}
-
-.project-tech {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  margin: 0 0 9px;
-  color: var(--muted);
-  font-size: 12.5px;
-  line-height: 1.55;
-}
-
-.project-tech strong {
-  flex: 0 0 auto;
-  color: var(--primary-strong);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.project-intro {
-  margin: 0 0 13px;
-  color: #303b35;
-  font-weight: 600;
+.projects-section {
+  font-size: 14.5px;
   line-height: 1.65;
 }
 
+.project {
+  padding-bottom: 34px;
+  margin-bottom: 34px;
+}
+
+.project .entry-head {
+  margin-bottom: 13px;
+}
+
+.project .entry-head h3 {
+  margin-bottom: 3px;
+  color: #1f2522;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.project .entry-head h3 span {
+  margin-left: 6px;
+  color: #777f7b;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.project-intro {
+  margin: 0 0 5px;
+  color: #5d6661;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.project .role {
+  color: var(--primary);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.project .period {
+  margin-top: 4px;
+  color: #8a918d;
+  font-size: 12px;
+  font-weight: 500;
+}
+
 .project li {
-  margin: 6px 0;
+  margin: 5px 0;
+  padding-left: 1em;
+  color: #363e3a;
+  line-height: 1.65;
+}
+
+.project li::before {
+  color: #6f7773;
+  font-weight: 400;
 }
 
 .project li strong {
-  color: #26312b;
-  font-weight: 800;
+  color: #202622;
+  font-weight: 700;
+}
+
+.project .tech-line {
+  margin-top: 8px;
+  color: #626a66;
+  font-size: 13.5px;
+}
+
+.project .tech-line strong {
+  margin-right: 5px;
+  color: #343b37;
 }
 
 @media (max-width: 760px) {
-  .project-tech {
-    align-items: flex-start;
-    gap: 8px;
+  .projects-section {
+    font-size: 14px;
+  }
+
+  .project .entry-head h3 {
+    font-size: 19px;
   }
 }
 
 @media print {
-  .project-tech {
-    margin-bottom: 2mm;
-    font-size: 8.2pt;
-  }
-
-  .project-tech strong {
-    font-size: 7.8pt;
-  }
-
-  .project-intro {
-    margin-bottom: 2.5mm;
+  .projects-section {
     font-size: 9.2pt;
     line-height: 1.5;
   }
 
+  .project {
+    padding-bottom: 5mm;
+    margin-bottom: 5mm;
+  }
+
+  .project .entry-head {
+    margin-bottom: 2.2mm;
+  }
+
+  .project .entry-head h3 {
+    font-size: 11pt;
+  }
+
+  .project-intro {
+    margin-bottom: 1.2mm;
+    font-size: 8.5pt;
+    line-height: 1.45;
+  }
+
   .project li {
-    margin: 1.1mm 0;
+    margin: 0.9mm 0;
+    line-height: 1.5;
+  }
+
+  .project .tech-line {
+    margin-top: 1.4mm;
+    font-size: 8.3pt;
   }
 }
