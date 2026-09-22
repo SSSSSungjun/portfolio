@@ -682,3 +682,63 @@ li::before {
     margin-top: 3mm;
   }
 }
+
+/* Resume typography balance */
+.entry-head h3 {
+  font-size: 21px;
+}
+
+.role {
+  font-size: 14px;
+}
+
+.period {
+  font-size: 13px;
+}
+
+.skill-group h3 {
+  font-size: 18px;
+}
+
+.simple-list strong {
+  font-size: 16px;
+}
+
+.simple-list span {
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .entry-head h3 {
+    font-size: 20px;
+  }
+
+  .skill-group h3 {
+    font-size: 17px;
+  }
+
+  .role,
+  .period {
+    font-size: 13px;
+  }
+}
+
+@media print {
+  .entry-head h3 {
+    font-size: 11.5pt;
+  }
+
+  .skill-group h3 {
+    font-size: 9.5pt;
+  }
+
+  .role,
+  .period,
+  .simple-list span {
+    font-size: 8.5pt;
+  }
+
+  .simple-list strong {
+    font-size: 9pt;
+  }
+}
