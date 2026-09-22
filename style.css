@@ -566,3 +566,59 @@ li::before {
     line-height: 1.45;
   }
 }
+
+/* Global section gap + project rhythm refinement */
+.resume-section {
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 30px;
+}
+
+.project .entry-head {
+  align-items: center;
+}
+
+.project .period {
+  margin-top: 0;
+}
+
+.project-label {
+  margin-top: 20px;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.project .entry-head + .project-label {
+  margin-top: 0;
+}
+
+.project-tech-heading {
+  margin-top: 20px;
+}
+
+@media (max-width: 760px) {
+  .resume-section {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .project .entry-head {
+    align-items: flex-start;
+  }
+}
+
+@media print {
+  .resume-section {
+    grid-template-columns: 28mm minmax(0, 1fr);
+    gap: 6mm;
+  }
+
+  .project-label {
+    margin-top: 3mm;
+    margin-bottom: 1mm;
+    font-size: 9pt;
+  }
+
+  .project-tech-heading {
+    margin-top: 3mm;
+  }
+}
