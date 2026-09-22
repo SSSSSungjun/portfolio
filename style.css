@@ -28,6 +28,7 @@
   --font-size-eyebrow: 14px;
   --font-size-contact: 13px;
   --font-size-contact-icon: 17px;
+  --contact-item-gap: 10px;
   --font-size-body: 15px;
   --font-size-section-title: 16px;
   --font-size-item-title: 21px;
@@ -627,7 +628,7 @@ h1 {
 .contact-item {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--contact-item-gap);
   color: var(--color-text-muted);
   font-size: var(--font-size-contact);
   line-height: 1.4;
