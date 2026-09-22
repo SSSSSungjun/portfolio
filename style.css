@@ -1,8 +1,6 @@
 :root {
   --primary: #12945f;
   --primary-strong: #0b7147;
-  --primary-soft: #effaf4;
-  --primary-line: #ccebdc;
   --text: #1f2723;
   --muted: #65716b;
   --subtle: #89948e;
@@ -11,9 +9,7 @@
   --canvas: #fafbfa;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html {
   -webkit-print-color-adjust: exact;
@@ -26,7 +22,7 @@ body {
   color: var(--text);
   font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", Inter, Arial, sans-serif;
   font-size: 15px;
-  line-height: 1.72;
+  line-height: 1.68;
   word-break: keep-all;
 }
 
@@ -35,19 +31,12 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: var(--primary-strong);
-  text-decoration: underline;
-}
-
-.site-header {
-  display: none !important;
-}
+.site-header { display: none !important; }
 
 .resume {
-  width: min(100%, 980px);
-  margin: 20px auto 44px;
-  padding: 64px 48px 72px;
+  width: min(100%, 1040px);
+  margin: 16px auto 40px;
+  padding: 58px 36px 64px;
   background: var(--paper);
   box-shadow: 0 10px 28px rgba(20, 28, 24, 0.035);
 }
@@ -55,9 +44,9 @@ a:hover {
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 40px;
+  gap: 32px;
   align-items: end;
-  padding-bottom: 36px;
+  padding-bottom: 30px;
   border-bottom: 2px solid var(--primary);
 }
 
@@ -69,15 +58,10 @@ a:hover {
   letter-spacing: 0.16em;
 }
 
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
-}
+h1, h2, h3, p { margin-top: 0; }
 
 h1 {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   color: #18211d;
   font-size: 42px;
   line-height: 1.15;
@@ -85,18 +69,18 @@ h1 {
 }
 
 .summary {
-  max-width: 680px;
+  max-width: 700px;
   margin-bottom: 0;
   color: #3f4a45;
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1.75;
 }
 
 .hero-meta {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 6px;
+  gap: 5px;
   padding-bottom: 3px;
   color: var(--muted);
   font-size: 13px;
@@ -105,9 +89,9 @@ h1 {
 
 .resume-section {
   display: grid;
-  grid-template-columns: 118px minmax(0, 1fr);
-  gap: 34px;
-  padding: 42px 0;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 22px;
+  padding: 34px 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -118,40 +102,28 @@ h1 {
 
 .resume-section > h2 {
   position: sticky;
-  top: 24px;
+  top: 20px;
   align-self: start;
   margin: 0;
   color: var(--primary);
   font-size: 14px;
   font-weight: 800;
-  line-height: 1.42;
+  line-height: 1.4;
   letter-spacing: -0.01em;
 }
 
-.section-body {
-  min-width: 0;
-}
+.section-body { min-width: 0; }
 
-.entry,
-.project {
-  margin-bottom: 30px;
-}
-
-.entry:last-child,
-.project:last-child {
-  margin-bottom: 0;
-}
-
-.entry.compact {
-  margin-bottom: 24px;
-}
+.entry, .project { margin-bottom: 26px; }
+.entry:last-child, .project:last-child { margin-bottom: 0; }
+.entry.compact { margin-bottom: 20px; }
 
 .entry-head {
   display: flex;
   justify-content: space-between;
-  gap: 22px;
+  gap: 18px;
   align-items: flex-start;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .entry-head h3 {
@@ -207,17 +179,14 @@ li::before {
 
 .skill-group {
   display: grid;
-  grid-template-columns: 115px minmax(0, 1fr);
-  gap: 28px;
+  grid-template-columns: 128px minmax(0, 1fr);
+  gap: 18px;
   align-items: start;
-  padding: 14px 0;
+  padding: 12px 0;
   border-bottom: 1px solid #eef2ef;
 }
 
-.skill-group:first-child {
-  padding-top: 0;
-}
-
+.skill-group:first-child { padding-top: 0; }
 .skill-group:last-child {
   padding-bottom: 0;
   border-bottom: 0;
@@ -226,7 +195,7 @@ li::before {
 .skill-group h3 {
   margin: 1px 0 0;
   color: #26302b;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
   line-height: 1.4;
   letter-spacing: -0.02em;
@@ -247,13 +216,13 @@ li::before {
 /* Projects */
 .projects-section {
   font-size: 14.5px;
-  line-height: 1.65;
+  line-height: 1.62;
 }
 
 .project {
   position: relative;
-  padding: 0 0 30px;
-  margin-bottom: 30px;
+  padding: 0 0 20px;
+  margin-bottom: 20px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -263,7 +232,7 @@ li::before {
 }
 
 .project .entry-head {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .project .entry-head h3 {
@@ -276,23 +245,18 @@ li::before {
 }
 
 .project .entry-head h3 span {
-  margin-left: 6px;
+  margin-left: 7px;
   color: #777f7b;
   font-size: 13px;
   font-weight: 400;
 }
 
 .project-intro {
-  margin: 0 0 5px;
+  margin: 0;
   color: #5d6661;
   font-size: 13.5px;
   font-weight: 400;
-  line-height: 1.55;
-}
-
-.project .role {
-  font-size: 12.5px;
-  font-weight: 600;
+  line-height: 1.5;
 }
 
 .project .period {
@@ -302,14 +266,15 @@ li::before {
 }
 
 .project ul {
-  margin-bottom: 10px;
+  margin-top: 8px;
+  margin-bottom: 7px;
 }
 
 .project li {
-  margin: 5px 0;
+  margin: 4px 0;
   padding-left: 1em;
   color: #363e3a;
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 .project li::before {
@@ -324,57 +289,37 @@ li::before {
 
 .project-tech {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .project-tech-label {
   flex: 0 0 auto;
-  padding-top: 2px;
   color: var(--primary);
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: 800;
   line-height: 1.5;
 }
 
-.project-tech-label::after {
-  content: ":";
-  margin-left: 2px;
-}
-
-.project-tech-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-.project-tech-tags span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 24px;
-  padding: 3px 8px;
-  border: 1px solid #d7dfda;
-  border-radius: 5px;
-  background: #f3f6f4;
-  color: #3f4843;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.3;
-  white-space: nowrap;
+.project-tech-list {
+  color: #5d6661;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 /* Certifications */
 .simple-list {
   display: grid;
-  gap: 10px;
+  gap: 9px;
 }
 
 .simple-list > div {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
-  padding-bottom: 9px;
+  gap: 18px;
+  padding-bottom: 8px;
   border-bottom: 1px solid #eef2ef;
 }
 
@@ -383,9 +328,7 @@ li::before {
   padding-bottom: 0;
 }
 
-.simple-list strong {
-  color: #2d3732;
-}
+.simple-list strong { color: #2d3732; }
 
 .simple-list span {
   color: var(--muted);
@@ -393,22 +336,19 @@ li::before {
   text-align: right;
 }
 
-/* Mobile */
 @media (max-width: 760px) {
-  body {
-    background: var(--paper);
-  }
+  body { background: var(--paper); }
 
   .resume {
     margin: 0;
-    padding: 36px 22px 52px;
+    padding: 34px 20px 48px;
     box-shadow: none;
   }
 
   .hero {
     grid-template-columns: 1fr;
-    gap: 20px;
-    padding-bottom: 30px;
+    gap: 18px;
+    padding-bottom: 28px;
   }
 
   .hero-meta {
@@ -418,8 +358,8 @@ li::before {
 
   .resume-section {
     grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 34px 0;
+    gap: 16px;
+    padding: 30px 0;
   }
 
   .resume-section > h2 {
@@ -432,53 +372,41 @@ li::before {
     gap: 4px;
   }
 
-  .period {
-    margin-top: 0;
-  }
+  .period { margin-top: 0; }
 
   .skill-group {
     grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 12px 0;
+    gap: 7px;
+    padding: 11px 0;
   }
 
-  .skill-group h3 {
-    white-space: normal;
-  }
+  .skill-group h3 { white-space: normal; }
 
   .simple-list > div {
     flex-direction: column;
     gap: 2px;
   }
 
-  .simple-list span {
-    text-align: left;
-  }
+  .simple-list span { text-align: left; }
 
-  .projects-section {
-    font-size: 14px;
-  }
-
-  .project .entry-head h3 {
-    font-size: 19px;
-  }
+  .project .entry-head h3 { font-size: 19px; }
 
   .project-tech {
     align-items: flex-start;
+    gap: 8px;
   }
 }
 
-/* Print */
 @media print {
   @page {
     size: A4;
-    margin: 12mm 12mm 14mm;
+    margin: 11mm 11mm 13mm;
   }
 
   body {
     background: #fff;
     font-size: 10pt;
-    line-height: 1.5;
+    line-height: 1.48;
   }
 
   .resume {
@@ -489,27 +417,23 @@ li::before {
   }
 
   .hero {
-    gap: 24px;
-    padding-bottom: 22px;
+    gap: 22px;
+    padding-bottom: 20px;
   }
 
-  h1 {
-    font-size: 28pt;
-  }
+  h1 { font-size: 28pt; }
 
   .summary {
-    font-size: 10.5pt;
-    line-height: 1.6;
+    font-size: 10.3pt;
+    line-height: 1.55;
   }
 
-  .hero-meta {
-    font-size: 8.5pt;
-  }
+  .hero-meta { font-size: 8.3pt; }
 
   .resume-section {
-    grid-template-columns: 26mm minmax(0, 1fr);
-    gap: 7mm;
-    padding: 7mm 0;
+    grid-template-columns: 23mm minmax(0, 1fr);
+    gap: 5mm;
+    padding: 6mm 0;
   }
 
   .resume-section > h2 {
@@ -517,82 +441,48 @@ li::before {
     font-size: 9pt;
   }
 
-  .entry,
-  .project,
-  .skill-group {
+  .entry, .project, .skill-group {
     break-inside: avoid;
   }
 
-  .entry-head h3 {
-    font-size: 11pt;
-  }
-
-  .role,
-  .period,
-  .simple-list span {
-    font-size: 8.5pt;
-  }
+  .entry-head h3 { font-size: 11pt; }
+  .role, .period, .simple-list span { font-size: 8.3pt; }
 
   .skill-group {
-    grid-template-columns: 27mm minmax(0, 1fr);
-    gap: 5mm;
-    padding: 2.5mm 0;
+    grid-template-columns: 30mm minmax(0, 1fr);
+    gap: 4mm;
+    padding: 2.2mm 0;
   }
 
-  .skill-group h3 {
-    font-size: 9pt;
-  }
-
-  .skill-badges img {
-    height: 16px;
-  }
+  .skill-group h3 { font-size: 8.8pt; }
+  .skill-badges img { height: 16px; }
 
   .project {
-    padding-bottom: 5mm;
-    margin-bottom: 5mm;
+    padding-bottom: 3.8mm;
+    margin-bottom: 3.8mm;
   }
 
-  .project .entry-head h3 {
-    font-size: 11pt;
-  }
-
+  .project .entry-head h3 { font-size: 11pt; }
   .project .entry-head h3 span,
-  .project .role,
-  .project .period {
-    font-size: 8.5pt;
-  }
+  .project .period { font-size: 8.3pt; }
 
   .project-intro {
-    margin-bottom: 1.2mm;
-    font-size: 8.5pt;
-    line-height: 1.45;
+    font-size: 8.4pt;
+    line-height: 1.4;
   }
 
   .project li {
-    margin: 0.8mm 0;
-    line-height: 1.5;
+    margin: 0.7mm 0;
+    line-height: 1.45;
   }
 
   .project-tech {
-    gap: 1.5mm;
-    margin-top: 1.5mm;
+    gap: 2mm;
+    margin-top: 1.2mm;
   }
 
-  .project-tech-label {
-    padding-top: 0.3mm;
-    font-size: 8pt;
-  }
-
-  .project-tech-tags {
-    gap: 1mm;
-  }
-
-  .project-tech-tags span {
-    min-height: 5mm;
-    padding: 0.4mm 1.2mm;
-    border-radius: 1mm;
-    font-size: 7.5pt;
-  }
+  .project-tech-label { font-size: 8.5pt; }
+  .project-tech-list { font-size: 8pt; }
 
   a {
     color: var(--primary) !important;
