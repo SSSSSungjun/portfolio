@@ -594,3 +594,63 @@ li::before {
     margin-top: 3mm;
   }
 }
+
+/* Resume heading scale + project rhythm */
+.resume-section > h2 {
+  font-size: 16px;
+}
+
+.project .entry-head h3 {
+  font-size: 23px;
+}
+
+.project .period {
+  font-size: 13px;
+}
+
+.project-label {
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+.project .entry-head + .project-label {
+  margin-top: 20px;
+}
+
+.project-tech-heading {
+  margin-top: 20px;
+}
+
+@media (max-width: 760px) {
+  .resume-section > h2 {
+    font-size: 17px;
+  }
+
+  .project .entry-head h3 {
+    font-size: 21px;
+  }
+
+  .project .period {
+    font-size: 12.5px;
+  }
+}
+
+@media print {
+  .resume-section > h2 {
+    font-size: 9.5pt;
+  }
+
+  .project .entry-head h3 {
+    font-size: 12pt;
+  }
+
+  .project .period {
+    font-size: 8.5pt;
+  }
+
+  .project-label,
+  .project .entry-head + .project-label,
+  .project-tech-heading {
+    margin-top: 3mm;
+  }
+}
