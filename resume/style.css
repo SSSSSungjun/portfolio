@@ -714,3 +714,32 @@ li::before {
     font-size: 9pt;
   }
 }
+
+/* Auxiliary text size alignment */
+.role {
+  font-size: 15px;
+}
+
+.hero-meta {
+  font-size: 15px;
+}
+
+.simple-list span {
+  font-size: 15px;
+}
+
+@media (max-width: 760px) {
+  .role,
+  .hero-meta,
+  .simple-list span {
+    font-size: 14px;
+  }
+}
+
+@media print {
+  .role,
+  .hero-meta,
+  .simple-list span {
+    font-size: 9pt;
+  }
+}
