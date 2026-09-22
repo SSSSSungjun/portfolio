@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="윤성준 Android Developer 이력서" />
   <title>윤성준 | Android Developer</title>
-  <link rel="stylesheet" href="./style.css?v=20260922-1308" />
+  <link rel="stylesheet" href="./style.css?v=20260922-1318" />
 </head>
 <body>
   <header class="site-header">
@@ -93,7 +93,7 @@
           </div>
         </div>
         <div class="skill-group">
-          <h3>Backend &amp; Data</h3>
+          <h3>Backend<br />&amp; Data</h3>
           <div class="skill-badges">
             <img src="https://img.shields.io/badge/Java-ED8B00?logo=openjdk&amp;logoColor=white" alt="Java" />
             <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?logo=springboot&amp;logoColor=white" alt="Spring Boot" />
@@ -103,7 +103,7 @@
           </div>
         </div>
         <div class="skill-group">
-          <h3>Infra &amp; Tools</h3>
+          <h3>Infra<br />&amp; Tools</h3>
           <div class="skill-badges">
             <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&amp;logoColor=white" alt="Docker" />
             <img src="https://img.shields.io/badge/AWS-232F3E?logo=amazonwebservices&amp;logoColor=white" alt="AWS" />
@@ -111,6 +111,7 @@
             <img src="https://img.shields.io/badge/Git-F05032?logo=git&amp;logoColor=white" alt="Git" />
             <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&amp;logoColor=white" alt="GitHub Actions" />
             <img src="https://img.shields.io/badge/Figma-F24E1E?logo=figma&amp;logoColor=white" alt="Figma" />
+            <img src="https://img.shields.io/badge/Jira-0052CC?logo=jira&amp;logoColor=white" alt="Jira" />
           </div>
         </div>
       </div>
@@ -128,6 +129,15 @@
             </div>
             <p class="period">2026.07 — 2026.08</p>
           </div>
+<ul>
+            <li><strong>Android 구조와 API·데이터 계약</strong>을 설계하고 개발 환경과 테스트 구조 구성</li>
+            <li><strong>PostgreSQL exclusion constraint, UUID 멱등키, advisory lock</strong>으로 활성 예약 충돌과 재시도 중복 요청 방어</li>
+            <li><strong>Room, WorkManager</strong> 기반 오프라인 반납 재전송 구조 구성</li>
+            <li><strong>Repository interface, Fake RemoteDataSource</strong> 분리로 서버 연결 전에도 앱 흐름 개발·검증</li>
+            <li><strong>JWT, Refresh Token Rotation, Transactional Outbox</strong>를 적용해 권한 검증과 상태 변경·알림 이벤트 정합성 관리</li>
+            <li><strong>GitHub Actions</strong>를 활용해 결과 확인과 코드 검수 과정 자동화</li>
+            <li>앱 완성 후 실사용 가능성 검토 단계까지 진행했으나 보안 검토 미통과로 실제 도입은 중단</li>
+          </ul>
           <div class="project-tech">
             <span class="project-tech-label">Tech</span>
             <div class="project-tech-tags">
@@ -141,15 +151,6 @@
               <span>GitHub Actions</span>
             </div>
           </div>
-          <ul>
-            <li><strong>Android 구조와 API·데이터 계약</strong>을 설계하고 개발 환경과 테스트 구조 구성</li>
-            <li><strong>PostgreSQL exclusion constraint, UUID 멱등키, advisory lock</strong>으로 활성 예약 충돌과 재시도 중복 요청 방어</li>
-            <li><strong>Room, WorkManager</strong> 기반 오프라인 반납 재전송 구조 구성</li>
-            <li><strong>Repository interface, Fake RemoteDataSource</strong> 분리로 서버 연결 전에도 앱 흐름 개발·검증</li>
-            <li><strong>JWT, Refresh Token Rotation, Transactional Outbox</strong>를 적용해 권한 검증과 상태 변경·알림 이벤트 정합성 관리</li>
-            <li><strong>GitHub Actions</strong>를 활용해 결과 확인과 코드 검수 과정 자동화</li>
-            <li>앱 완성 후 실사용 가능성 검토 단계까지 진행했으나 보안 검토 미통과로 실제 도입은 중단</li>
-          </ul>
         </article>
 
         <article class="project">
@@ -161,6 +162,14 @@
             </div>
             <p class="period">2026.07</p>
           </div>
+<ul>
+            <li><strong>쿠키 기반 익명 세션</strong>으로 같은 브라우저에서 작성한 글과 댓글의 수정·삭제 권한 검증</li>
+            <li><strong>Controller, Service, Repository, DTO</strong>의 책임을 분리하고 Entity의 API 직접 노출 방지</li>
+            <li><strong>원자 UPDATE, 비관적 잠금, unique constraint</strong>를 적용해 조회·수정·좋아요 동시 요청의 중복과 충돌 방어</li>
+            <li><strong>ID 집계 쿼리</strong>로 게시글 목록의 좋아요·댓글 반복 조회 축소</li>
+            <li><strong>React reducer와 API 레이어</strong>를 분리해 화면 상태와 데이터 요청 로직 관리</li>
+            <li><strong>k6 부하 테스트</strong>에서 200 VU·3분 기준 75,336건 처리, 357.16 req/s, 오류율 0%, HTTP p95 52.89ms 확인</li>
+          </ul>
           <div class="project-tech">
             <span class="project-tech-label">Tech</span>
             <div class="project-tech-tags">
@@ -171,14 +180,6 @@
               <span>k6</span>
             </div>
           </div>
-          <ul>
-            <li><strong>쿠키 기반 익명 세션</strong>으로 같은 브라우저에서 작성한 글과 댓글의 수정·삭제 권한 검증</li>
-            <li><strong>Controller, Service, Repository, DTO</strong>의 책임을 분리하고 Entity의 API 직접 노출 방지</li>
-            <li><strong>원자 UPDATE, 비관적 잠금, unique constraint</strong>를 적용해 조회·수정·좋아요 동시 요청의 중복과 충돌 방어</li>
-            <li><strong>ID 집계 쿼리</strong>로 게시글 목록의 좋아요·댓글 반복 조회 축소</li>
-            <li><strong>React reducer와 API 레이어</strong>를 분리해 화면 상태와 데이터 요청 로직 관리</li>
-            <li><strong>k6 부하 테스트</strong>에서 200 VU·3분 기준 75,336건 처리, 357.16 req/s, 오류율 0%, HTTP p95 52.89ms 확인</li>
-          </ul>
         </article>
 
         <article class="project">
@@ -190,6 +191,11 @@
             </div>
             <p class="period">2025.09</p>
           </div>
+<ul>
+            <li><strong>feature, core, data 멀티모듈 구조</strong>로 기능과 공통·데이터 영역 분리</li>
+            <li><strong>Coroutines async/await</strong>를 활용해 여러 서버 지표 API 병렬 호출</li>
+            <li><strong>Canvas API</strong>로 서버 메트릭 차트를 직접 구현하고 Navigation 기반 화면 흐름 구성</li>
+          </ul>
           <div class="project-tech">
             <span class="project-tech-label">Tech</span>
             <div class="project-tech-tags">
@@ -200,11 +206,6 @@
               <span>Navigation</span>
             </div>
           </div>
-          <ul>
-            <li><strong>feature, core, data 멀티모듈 구조</strong>로 기능과 공통·데이터 영역 분리</li>
-            <li><strong>Coroutines async/await</strong>를 활용해 여러 서버 지표 API 병렬 호출</li>
-            <li><strong>Canvas API</strong>로 서버 메트릭 차트를 직접 구현하고 Navigation 기반 화면 흐름 구성</li>
-          </ul>
         </article>
 
         <article class="project">
@@ -216,6 +217,12 @@
             </div>
             <p class="period">2025.07.08 — 2025.08.21</p>
           </div>
+<ul>
+            <li><strong>MVVM, Repository 패턴</strong>을 기반으로 Android 코드베이스와 데이터 계층 구성</li>
+            <li><strong>WebSocket, OkHttp</strong>를 활용해 실시간 메시지 송수신 구현</li>
+            <li><strong>DataStore</strong>로 로그인 세션과 토큰 관리</li>
+            <li><strong>Paging3</strong>를 적용해 채팅 이력을 페이지 단위로 조회</li>
+          </ul>
           <div class="project-tech">
             <span class="project-tech-label">Tech</span>
             <div class="project-tech-tags">
@@ -228,12 +235,6 @@
               <span>Paging3</span>
             </div>
           </div>
-          <ul>
-            <li><strong>MVVM, Repository 패턴</strong>을 기반으로 Android 코드베이스와 데이터 계층 구성</li>
-            <li><strong>WebSocket, OkHttp</strong>를 활용해 실시간 메시지 송수신 구현</li>
-            <li><strong>DataStore</strong>로 로그인 세션과 토큰 관리</li>
-            <li><strong>Paging3</strong>를 적용해 채팅 이력을 페이지 단위로 조회</li>
-          </ul>
         </article>
 
         <article class="project">
@@ -245,6 +246,12 @@
             </div>
             <p class="period">2025.05</p>
           </div>
+<ul>
+            <li><strong>Beacon, GPS</strong>를 연동해 매장 내 모바일 주문 흐름 구현</li>
+            <li><strong>Android NFC API</strong>를 활용한 NFC 결제 시뮬레이션 구현</li>
+            <li><strong>XML UI, ViewModel</strong> 기반 MVVM 구조 적용</li>
+            <li><strong>Spring Boot, MyBatis</strong> 기반 백엔드를 개발하고 AWS EC2에 배포</li>
+          </ul>
           <div class="project-tech">
             <span class="project-tech-label">Tech</span>
             <div class="project-tech-tags">
@@ -258,12 +265,6 @@
               <span>AWS EC2</span>
             </div>
           </div>
-          <ul>
-            <li><strong>Beacon, GPS</strong>를 연동해 매장 내 모바일 주문 흐름 구현</li>
-            <li><strong>Android NFC API</strong>를 활용한 NFC 결제 시뮬레이션 구현</li>
-            <li><strong>XML UI, ViewModel</strong> 기반 MVVM 구조 적용</li>
-            <li><strong>Spring Boot, MyBatis</strong> 기반 백엔드를 개발하고 AWS EC2에 배포</li>
-          </ul>
         </article>
 
         <article class="project">
@@ -275,6 +276,11 @@
             </div>
             <p class="period">2025.04 — 2025.05</p>
           </div>
+<ul>
+            <li>사용량 기반 친환경 보일러 추천, AI 컨설팅 챗봇, 환경 실천 커뮤니티, 자가 사용량 검침 기능 개발 참여</li>
+            <li><strong>멀티모듈 구조</strong>로 모듈 간 의존성과 코드 재사용 관리</li>
+            <li><strong>Hilt, MVVM</strong> 기반 의존성 주입과 ViewModel 구조 적용</li>
+          </ul>
           <div class="project-tech">
             <span class="project-tech-label">Tech</span>
             <div class="project-tech-tags">
@@ -285,11 +291,6 @@
               <span>Multi-module</span>
             </div>
           </div>
-          <ul>
-            <li>사용량 기반 친환경 보일러 추천, AI 컨설팅 챗봇, 환경 실천 커뮤니티, 자가 사용량 검침 기능 개발 참여</li>
-            <li><strong>멀티모듈 구조</strong>로 모듈 간 의존성과 코드 재사용 관리</li>
-            <li><strong>Hilt, MVVM</strong> 기반 의존성 주입과 ViewModel 구조 적용</li>
-          </ul>
         </article>
 
         <article class="project">
@@ -301,6 +302,9 @@
             </div>
             <p class="period">2024.07.15 — 2024.07.26</p>
           </div>
+<ul>
+            <li><strong>Android 채팅 UI</strong>와 상담 흐름에 필요한 비즈니스 로직 구현</li>
+          </ul>
           <div class="project-tech">
             <span class="project-tech-label">Tech</span>
             <div class="project-tech-tags">
@@ -309,9 +313,6 @@
               <span>Chat UI</span>
             </div>
           </div>
-          <ul>
-            <li><strong>Android 채팅 UI</strong>와 상담 흐름에 필요한 비즈니스 로직 구현</li>
-          </ul>
         </article>
 
         <article class="project">
@@ -323,6 +324,11 @@
             </div>
             <p class="period">2023.09.04 — 2023.11.16</p>
           </div>
+<ul>
+            <li><strong>Android 프론트엔드</strong> 전반의 화면과 기능 흐름 구현</li>
+            <li><strong>Figma</strong>로 UI, 화면 흐름, 데이터 방향과 API 연동 지점 시각화</li>
+            <li>비대면 환경에서 정기 화상회의를 진행하며 Android 파트 완성</li>
+          </ul>
           <div class="project-tech">
             <span class="project-tech-label">Tech</span>
             <div class="project-tech-tags">
@@ -331,17 +337,12 @@
               <span>On-device AI</span>
             </div>
           </div>
-          <ul>
-            <li><strong>Android 프론트엔드</strong> 전반의 화면과 기능 흐름 구현</li>
-            <li><strong>Figma</strong>로 UI, 화면 흐름, 데이터 방향과 API 연동 지점 시각화</li>
-            <li>비대면 환경에서 정기 화상회의를 진행하며 Android 파트 완성</li>
-          </ul>
         </article>
       </div>
     </section>
 
     <section class="resume-section">
-      <h2>Certifications &amp; Language</h2>
+      <h2>Certifications<br />&amp; Language</h2>
       <div class="section-body simple-list">
         <div><strong>TOEIC Speaking IH (140)</strong><span>ETS · 2026.09.06 · 유효기간 2028.09.06</span></div>
         <div><strong>한국사능력검정시험 2급</strong><span>국사편찬위원회 · 2026.06.05</span></div>
@@ -351,7 +352,7 @@
     </section>
 
     <section class="resume-section">
-      <h2>Awards &amp; Activities</h2>
+      <h2>Awards<br />&amp; Activities</h2>
       <div class="section-body">
         <article class="entry">
           <div class="entry-head">
