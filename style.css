@@ -433,10 +433,10 @@ h1 {
   display: inline-flex;
   align-items: center;
   padding: 2px 7px;
-  border: 1px solid var(--color-line);
+  border: 1px solid #d8ddd9;
   border-radius: 3px;
-  color: var(--color-text-muted);
-  background: var(--color-paper);
+  color: #4f5954;
+  background: #f1f3f2;
   font-size: var(--font-size-project-tech);
   font-weight: var(--font-weight-regular);
   line-height: 1.45;
