@@ -1,14 +1,14 @@
 :root {
-  --primary: #12945f;
-  --primary-strong: #0b7147;
-  --primary-soft: #effaf4;
-  --primary-line: #ccebdc;
+  --primary: #1f7a5c;
+  --primary-strong: #14543f;
+  --primary-soft: #edf7f2;
+  --primary-line: #cfe4d9;
   --text: #1f2723;
   --muted: #65716b;
   --subtle: #89948e;
   --line: #e6ece8;
   --paper: #ffffff;
-  --canvas: #fafbfa;
+  --canvas: #f7f8f7;
 }
 
 * { box-sizing: border-box; }
@@ -33,12 +33,61 @@ a {
   text-decoration: none;
 }
 
-.site-header { display: none !important; }
+a:hover {
+  color: var(--primary-strong);
+  text-decoration: underline;
+}
+
+.site-header {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: min(100% - 40px, 1380px);
+  margin: 0 auto;
+  padding: 18px 0 16px;
+  background: transparent;
+}
+
+.brand { display: none; }
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.site-nav a {
+  padding: 8px 13px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #6b737b;
+}
+
+.site-nav a:hover {
+  border-color: #e3e6e8;
+  background: #fff;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-nav a.active {
+  border-color: #d9dedb;
+  background: #fff;
+  color: var(--primary-strong);
+  text-decoration: none;
+}
+
+.site-nav > a[href^="https://github.com"],
+.print-button { display: none; }
 
 .resume {
-  width: min(100%, 1040px);
-  margin: 20px auto 44px;
-  padding: 64px 48px 72px;
+  width: min(100%, 980px);
+  margin: 0 auto 44px;
+  padding: 72px 78px 84px;
   background: var(--paper);
   box-shadow: 0 10px 28px rgba(20, 28, 24, 0.035);
 }
@@ -46,9 +95,9 @@ a {
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 40px;
+  gap: 48px;
   align-items: end;
-  padding-bottom: 36px;
+  padding-bottom: 42px;
   border-bottom: 2px solid var(--primary);
 }
 
@@ -60,7 +109,10 @@ a {
   letter-spacing: 0.16em;
 }
 
-h1, h2, h3, h4, p { margin-top: 0; }
+h1,
+h2,
+h3,
+p { margin-top: 0; }
 
 h1 {
   margin-bottom: 14px;
@@ -91,9 +143,9 @@ h1 {
 
 .resume-section {
   display: grid;
-  grid-template-columns: 118px minmax(0, 1fr);
-  gap: 34px;
-  padding: 42px 0;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 42px;
+  padding: 50px 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -110,32 +162,26 @@ h1 {
   color: var(--primary);
   font-size: 14px;
   font-weight: 800;
-  line-height: 1.42;
+  line-height: 1.4;
   letter-spacing: -0.01em;
 }
 
 .section-body { min-width: 0; }
 
 .entry,
-.project {
-  margin-bottom: 30px;
-}
+.project { margin-bottom: 34px; }
 
 .entry:last-child,
-.project:last-child {
-  margin-bottom: 0;
-}
+.project:last-child { margin-bottom: 0; }
 
-.entry.compact {
-  margin-bottom: 24px;
-}
+.entry.compact { margin-bottom: 28px; }
 
 .entry-head {
   display: flex;
   justify-content: space-between;
-  gap: 22px;
+  gap: 24px;
   align-items: flex-start;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .entry-head h3 {
@@ -144,6 +190,19 @@ h1 {
   font-size: 19px;
   line-height: 1.4;
   letter-spacing: -0.025em;
+}
+
+.project .entry-head h3 {
+  margin-bottom: 5px;
+  color: #1c2722;
+  font-size: 21px;
+}
+
+.project .entry-head h3 span {
+  margin-left: 6px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .role {
@@ -183,7 +242,6 @@ li::before {
   font-weight: 500;
 }
 
-/* Tech Stack */
 .skill-groups {
   display: flex;
   flex-direction: column;
@@ -191,15 +249,14 @@ li::before {
 
 .skill-group {
   display: grid;
-  grid-template-columns: 115px minmax(0, 1fr);
-  gap: 28px;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 18px;
   align-items: start;
-  padding: 14px 0;
+  padding: 16px 0;
   border-bottom: 1px solid #eef2ef;
 }
 
 .skill-group:first-child { padding-top: 0; }
-
 .skill-group:last-child {
   padding-bottom: 0;
   border-bottom: 0;
@@ -212,7 +269,6 @@ li::before {
   font-weight: 800;
   line-height: 1.4;
   letter-spacing: -0.02em;
-  white-space: nowrap;
 }
 
 .skill-badges {
@@ -226,20 +282,10 @@ li::before {
   max-width: 100%;
 }
 
-/* Projects */
-.projects-section {
-  font-size: 14.5px;
-  line-height: 1.65;
-}
-
-.projects-section .section-body {
-  padding: 0 18px;
-}
-
 .project {
   position: relative;
-  padding: 0 0 30px;
-  margin-bottom: 30px;
+  padding: 0 0 38px;
+  margin-bottom: 38px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -248,94 +294,18 @@ li::before {
   padding-bottom: 0;
 }
 
-.project-head {
-  display: block;
-  margin-bottom: 12px;
-}
+.project ul { margin-bottom: 0; }
 
-.project-title-row {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.project-title-row h3,
-.project-head h3 {
-  margin: 0;
-  color: #1f2522;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.35;
-  letter-spacing: -0.02em;
-}
-
-.project-title-row .period,
-.project-head .period {
-  margin: 0;
-  color: #6d746f;
-  font-size: 12.5px;
-  font-weight: 500;
-}
-
-.project-label {
-  margin: 13px 0 5px;
-  color: #26302b;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.4;
-}
-
-.project-head + .project-label {
-  margin-top: 0;
-}
-
-.project-description {
-  margin: 0;
-  color: #5d6661;
-  font-size: 13.5px;
-  font-weight: 400;
-  line-height: 1.55;
-}
-
-.project ul {
-  margin: 0;
-}
-
-.project li {
-  margin: 5px 0;
-  color: #363e3a;
-  font-size: 14.5px;
-  line-height: 1.65;
-}
-
-.project li strong {
-  font-weight: inherit;
-}
-
-.project-tech-heading {
-  margin-top: 14px;
-}
-
-.project-tech-list {
-  margin: 0;
-  color: #5d6661;
-  font-size: 13.5px;
-  font-weight: 400;
-  line-height: 1.55;
-}
-
-/* Certifications */
 .simple-list {
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
 .simple-list > div {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  padding-bottom: 9px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #eef2ef;
 }
 
@@ -344,9 +314,7 @@ li::before {
   padding-bottom: 0;
 }
 
-.simple-list strong {
-  color: #2d3732;
-}
+.simple-list strong { color: #2d3732; }
 
 .simple-list span {
   color: var(--muted);
@@ -357,16 +325,30 @@ li::before {
 @media (max-width: 760px) {
   body { background: var(--paper); }
 
+  .site-header {
+    width: 100%;
+    padding: 12px 18px;
+  }
+
+  .site-nav {
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .site-nav a {
+    padding: 7px 10px;
+  }
+
   .resume {
     margin: 0;
-    padding: 36px 22px 52px;
+    padding: 38px 24px 56px;
     box-shadow: none;
   }
 
   .hero {
     grid-template-columns: 1fr;
-    gap: 20px;
-    padding-bottom: 30px;
+    gap: 22px;
+    padding-bottom: 32px;
   }
 
   .hero-meta {
@@ -376,8 +358,8 @@ li::before {
 
   .resume-section {
     grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 34px 0;
+    gap: 22px;
+    padding: 38px 0;
   }
 
   .resume-section > h2 {
@@ -385,8 +367,7 @@ li::before {
     font-size: 16px;
   }
 
-  .entry-head,
-  .project-title-row {
+  .entry-head {
     flex-direction: column;
     gap: 4px;
   }
@@ -396,13 +377,7 @@ li::before {
   .skill-group {
     grid-template-columns: 1fr;
     gap: 8px;
-    padding: 12px 0;
-  }
-
-  .skill-group h3 { white-space: normal; }
-
-  .projects-section .section-body {
-    padding: 0;
+    padding: 14px 0;
   }
 
   .simple-list > div {
@@ -416,13 +391,15 @@ li::before {
 @media print {
   @page {
     size: A4;
-    margin: 12mm 12mm 14mm;
+    margin: 13mm 14mm 15mm;
   }
+
+  .site-header { display: none !important; }
 
   body {
     background: #fff;
     font-size: 10pt;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   .resume {
@@ -433,23 +410,23 @@ li::before {
   }
 
   .hero {
-    gap: 24px;
-    padding-bottom: 22px;
+    gap: 28px;
+    padding-bottom: 24px;
   }
 
   h1 { font-size: 28pt; }
 
   .summary {
     font-size: 10.5pt;
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
   .hero-meta { font-size: 8.5pt; }
 
   .resume-section {
-    grid-template-columns: 26mm minmax(0, 1fr);
-    gap: 7mm;
-    padding: 7mm 0;
+    grid-template-columns: 34mm minmax(0, 1fr);
+    gap: 8mm;
+    padding: 8mm 0;
   }
 
   .resume-section > h2 {
@@ -459,63 +436,57 @@ li::before {
 
   .entry,
   .project,
-  .skill-group {
-    break-inside: avoid;
+  .skill-group { break-inside: avoid; }
+
+  .project {
+    padding-bottom: 6mm;
+    margin-bottom: 6mm;
   }
 
   .entry-head h3 { font-size: 11pt; }
+  .project .entry-head h3 { font-size: 11.5pt; }
+
+  .project .entry-head h3 span,
   .role,
   .period,
   .simple-list span { font-size: 8.5pt; }
 
   .skill-group {
-    grid-template-columns: 27mm minmax(0, 1fr);
-    gap: 5mm;
-    padding: 2.5mm 0;
+    grid-template-columns: 28mm minmax(0, 1fr);
+    gap: 4mm;
+    padding: 3mm 0;
   }
 
   .skill-group h3 { font-size: 9pt; }
   .skill-badges img { height: 16px; }
 
-  .projects-section .section-body {
-    padding: 0 2mm;
-  }
-
-  .project {
-    padding-bottom: 5mm;
-    margin-bottom: 5mm;
-  }
-
-  .project-title-row {
-    gap: 2mm;
-  }
-
-  .project-title-row h3,
-  .project-head h3 {
-    font-size: 11pt;
-  }
-
-  .project-title-row .period,
-  .project-head .period {
-    font-size: 8pt;
-  }
-
-  .project-label {
-    margin: 2mm 0 0.8mm;
-    font-size: 8.5pt;
-  }
-
-  .project-description,
-  .project li,
-  .project-tech-list {
-    font-size: 8.2pt;
-    line-height: 1.45;
-  }
-
-  .project li { margin: 0.7mm 0; }
-
   a {
     color: var(--primary) !important;
     text-decoration: none !important;
   }
+}
+
+/* Portfolio and resume are intentionally separate documents. */
+.site-header { display: none !important; }
+.resume { margin-top: 36px; }
+
+/* Visual refinement */
+:root {
+  --primary: #12945f;
+  --primary-strong: #0b7147;
+  --primary-soft: #effaf4;
+  --primary-line: #ccebdc;
+  --canvas: #fafbfa;
+}
+
+.site-header { display: none !important; }
+.resume { margin-top: 20px; }
+
+@media (max-width: 760px) {
+  body { background: #fff; }
+  .resume { margin-top: 0; }
+}
+
+@media print {
+  .resume { margin-top: 0; }
 }

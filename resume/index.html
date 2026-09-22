@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="윤성준 Android Developer 이력서" />
   <title>윤성준 | Android Developer</title>
-  <link rel="stylesheet" href="./style.css?v=20260922-1445" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   <header class="site-header">
@@ -53,7 +53,7 @@
     </section>
 
     <section class="resume-section">
-      <h2>Education<br />&amp; Training</h2>
+      <h2>Education &amp; Training</h2>
       <div class="section-body">
         <article class="entry compact">
           <div class="entry-head">
@@ -111,7 +111,6 @@
             <img src="https://img.shields.io/badge/Git-F05032?logo=git&amp;logoColor=white" alt="Git" />
             <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&amp;logoColor=white" alt="GitHub Actions" />
             <img src="https://img.shields.io/badge/Figma-F24E1E?logo=figma&amp;logoColor=white" alt="Figma" />
-            <img src="https://img.shields.io/badge/Jira-0052CC?logoColor=white" alt="Jira" />
           </div>
         </div>
       </div>
@@ -121,133 +120,147 @@
       <h2>Projects</h2>
       <div class="section-body">
         <article class="project">
-          <div class="project-head"><div class="project-title-row"><h3>Bike-book</h3><p class="period">2026.07 — 2026.08</p></div></div>
-          <h4 class="project-label">Description</h4>
-          <p class="project-description">사내 공용 자전거의 신청·승인·이용·반납을 관리하는 Android·Backend 애플리케이션</p>
-          <h4 class="project-label">Contributions</h4>
+          <div class="entry-head">
+            <div>
+              <h3>Bike - book <span>사내 자전거 예약 Android·Backend 앱</span></h3>
+              <p class="role">Android &amp; Backend Developer · 기술 설계</p>
+            </div>
+            <p class="period">2026.07 — 2026.08</p>
+          </div>
           <ul>
-            <li>Android와 백엔드의 연결 기준을 일관되게 유지하기 위해 앱 구조와 API·데이터 계약을 설계하고 Android·Backend 구현을 담당</li>
-            <li>동시 예약과 재시도에 따른 데이터 충돌을 막기 위해 PostgreSQL exclusion constraint, UUID 멱등키, advisory lock 적용</li>
-            <li>네트워크 단절 상황에서도 반납 요청을 보존하기 위해 Room 단일 데이터 원본과 WorkManager 재전송 구조 구성</li>
-            <li>서버 완성 전에도 앱 개발을 이어가기 위해 Repository interface와 Fake RemoteDataSource 분리</li>
-            <li>인증과 상태 변경 정합성을 분리해 관리하기 위해 JWT, Refresh Token Rotation, Transactional Outbox 적용</li>
-            <li>반복적인 결과 확인과 코드 검수 부담을 줄이기 위해 GitHub Actions 기반 검증 과정 자동화</li>
-            <li>실사용 가능성 검토 단계까지 진행했으나 보안 검토 미통과로 실제 도입 중단</li>
+            <li>사내 공용 자전거의 신청, 관리자 승인, 이용, 반납을 관리하는 앱을 구현했습니다.</li>
+            <li>Android 전체 구조와 API·데이터 계약, 개발 환경 및 테스트 구조를 설계했습니다.</li>
+            <li>Room을 단일 데이터 원본으로 사용하고 WorkManager 기반 오프라인 반납 재전송을 구성했습니다.</li>
+            <li>Screen·ViewModel이 Repository interface에 의존하도록 하고 RemoteDataSource를 Fake와 Ktor 구현으로 분리해 서버 연결 전에도 앱 흐름을 개발·검증할 수 있도록 구성했습니다.</li>
+            <li>PostgreSQL exclusion constraint로 활성 예약의 시간 충돌을 방어하고 UUID 멱등키와 advisory lock으로 네트워크 재시도에 따른 중복 요청을 방어했습니다.</li>
+            <li>Transactional Outbox를 적용해 예약 상태 변경과 알림 이벤트의 정합성을 관리했습니다.</li>
+            <li>JWT와 Refresh Token Rotation을 적용하고 역할 및 예약 소유권을 서버에서 검증하도록 구성했습니다.</li>
+            <li>Codex 작업 범위와 개발 규칙을 정하고 GitHub Actions를 활용해 결과 확인과 코드 검수 과정을 자동화했습니다.</li>
+            <li>앱을 완성해 실사용 가능성 검토 단계까지 진행했으며, 보안 검토 미통과로 실제 도입은 하지 않았습니다.</li>
           </ul>
-          <h4 class="project-label project-tech-heading">Tech</h4>
-          <p class="project-tech-list">Kotlin, Jetpack Compose, Room, WorkManager, Ktor, PostgreSQL, JWT, GitHub Actions</p>
         </article>
 
         <article class="project">
-          <div class="project-head"><div class="project-title-row"><h3>대나무숲</h3><p class="period">2026.07</p></div></div>
-          <h4 class="project-label">Description</h4>
-          <p class="project-description">로그인 없이 글·댓글·좋아요를 이용하는 익명 커뮤니티 웹 서비스</p>
-          <h4 class="project-label">Contributions</h4>
+          <div class="entry-head">
+            <div>
+              <h3>대나무숲 <span>익명 웹 게시판</span></h3>
+              <p class="role">Full-stack Developer · 기술 설계</p>
+            </div>
+            <p class="period">2026.07</p>
+          </div>
           <ul>
-            <li>로그인 없는 환경에서도 작성자 권한을 구분하기 위해 쿠키 기반 익명 세션을 설계하고 Full-stack 구현을 담당</li>
-            <li>기능 변경 시 영향 범위를 줄이기 위해 Controller, Service, Repository, DTO의 책임을 분리하고 Entity의 API 직접 노출 방지</li>
-            <li>동시 요청에서도 중복과 충돌을 막기 위해 원자 UPDATE, 비관적 잠금, unique constraint 적용</li>
-            <li>목록 조회의 반복 DB 접근을 줄이기 위해 좋아요·댓글 조회를 ID 집계 쿼리로 변경</li>
-            <li>화면 상태와 API 요청의 책임을 분리하기 위해 React reducer와 API 레이어를 분리</li>
-            <li>동시 접속 상황의 안정성을 확인하기 위해 k6로 200 VU·3분 부하 테스트를 수행해 75,336건 처리, 오류율 0%, HTTP p95 52.89ms 확인</li>
+            <li>로그인 없이 글과 댓글을 작성하는 익명 게시판의 프론트엔드와 백엔드를 구현했습니다.</li>
+            <li>쿠키 기반 익명 세션으로 같은 브라우저에서 작성한 글과 댓글의 수정·삭제 권한을 서버에서 검증했습니다.</li>
+            <li>Controller, Service, Repository, DTO의 책임을 분리하고 Entity를 API 계약에 직접 노출하지 않도록 구성했습니다.</li>
+            <li>조회수는 단일 UPDATE 쿼리로 원자 증가시키고, 게시글·댓글 수정과 좋아요 요청에는 비관적 잠금과 unique constraint를 적용해 동시 요청의 중복과 충돌을 방어했습니다.</li>
+            <li>게시글 목록의 좋아요·댓글 관련 반복 조회를 줄이기 위해 ID 목록을 모아 집계 쿼리로 조회하도록 구성했습니다.</li>
+            <li>React에서는 reducer 기반 상태 관리와 API 레이어 분리로 화면 상태와 데이터 요청 로직을 분리했습니다.</li>
+            <li>GitHub-hosted runner에서 PostgreSQL 16과 애플리케이션을 함께 실행해 200 VU, 3분 부하 테스트를 수행했습니다.</li>
+            <li>총 HTTP 요청 75,336건, 처리량 357.16 req/s, 오류율 0%, HTTP p95 52.89ms를 확인하고 SQL 정합성 검사를 수행했습니다.</li>
           </ul>
-          <h4 class="project-label project-tech-heading">Tech</h4>
-          <p class="project-tech-list">Java, Spring Boot, PostgreSQL, React, k6</p>
         </article>
 
         <article class="project">
-          <div class="project-head"><div class="project-title-row"><h3>Mori</h3><p class="period">2025.09</p></div></div>
-          <h4 class="project-label">Description</h4>
-          <p class="project-description">EC2 서버의 CPU·메모리·디스크·네트워크 지표를 조회하고 시각화하는 Android 애플리케이션</p>
-          <h4 class="project-label">Contributions</h4>
+          <div class="entry-head">
+            <div>
+              <h3>Mori <span>서버 리포트 Android 앱</span></h3>
+              <p class="role">Android Developer</p>
+            </div>
+            <p class="period">2025.09</p>
+          </div>
           <ul>
-            <li>서버 상태를 모바일에서 빠르게 확인할 수 있도록 Android 앱 전반의 구현을 담당</li>
-            <li>기능 확장 시 의존성을 분리하기 위해 feature, core, data 멀티모듈 구조로 기능·공통·데이터 영역 분리</li>
-            <li>여러 서버 지표를 빠르게 조회하기 위해 Coroutines async/await로 API 병렬 호출</li>
-            <li>메트릭 변화를 직관적으로 확인하기 위해 Canvas API로 차트를 직접 구현하고 Navigation 기반 화면 흐름 구성</li>
+            <li>EC2 서버의 CPU, 메모리, 디스크, 네트워크 등 서버 메트릭을 Android 앱에서 조회하고 시각화했습니다.</li>
+            <li>feature, core, data 모듈을 분리한 멀티모듈 구조를 설계했습니다.</li>
+            <li>Coroutines async/await를 활용해 여러 API 호출을 병렬 처리했습니다.</li>
+            <li>Canvas API 기반 서버 메트릭 차트를 직접 구현하고 Navigation 기반 화면 흐름을 구성했습니다.</li>
           </ul>
-          <h4 class="project-label project-tech-heading">Tech</h4>
-          <p class="project-tech-list">Kotlin, Jetpack Compose, Coroutines, Canvas, Navigation</p>
         </article>
 
         <article class="project">
-          <div class="project-head"><div class="project-title-row"><h3>관:상견례</h3><p class="period">2025.07 — 2025.08</p></div></div>
-          <h4 class="project-label">Description</h4>
-          <p class="project-description">얼굴 인식·관상 분석 기반 사용자 매칭과 실시간 1대1 채팅을 제공하는 Android 애플리케이션</p>
-          <h4 class="project-label">Contributions</h4>
+          <div class="entry-head">
+            <div>
+              <h3>관:상견례 <span>실시간 1대1 채팅 Android 앱</span></h3>
+              <p class="role">Android Developer</p>
+            </div>
+            <p class="period">2025.07.08 — 2025.08.21</p>
+          </div>
           <ul>
-            <li>매칭부터 실시간 채팅까지 하나의 흐름으로 연결하기 위해 Android 앱 구현을 담당</li>
-            <li>화면과 데이터 로직의 책임을 분리하기 위해 MVVM과 Repository 패턴 기반으로 코드베이스 구성</li>
-            <li>실시간 메시지를 안정적으로 주고받기 위해 WebSocket과 OkHttp로 메시지 송수신 구현</li>
-            <li>로그인 상태와 토큰을 앱 재실행 후에도 유지하기 위해 DataStore로 세션 정보 관리</li>
-            <li>긴 채팅 이력을 효율적으로 조회하기 위해 Paging3를 적용해 페이지 단위 조회 구현</li>
+            <li>얼굴 인식과 관상 분석을 활용해 사용자를 매칭하고 실시간 1대1 채팅을 제공하는 Android 앱을 개발했습니다.</li>
+            <li>MVVM과 Repository 패턴을 기반으로 Android 코드베이스와 데이터 계층을 구성했습니다.</li>
+            <li>WebSocket과 OkHttp를 활용해 실시간 메시지 송수신을 구현했습니다.</li>
+            <li>DataStore를 활용해 로그인 세션과 토큰을 관리했습니다.</li>
+            <li>Paging3를 적용해 채팅 이력을 페이지 단위로 불러오도록 구성했습니다.</li>
           </ul>
-          <h4 class="project-label project-tech-heading">Tech</h4>
-          <p class="project-tech-list">Kotlin, Android, MVVM, WebSocket, OkHttp, DataStore, Paging3</p>
         </article>
 
         <article class="project">
-          <div class="project-head"><div class="project-title-row"><h3>싱싱과일</h3><p class="period">2025.05</p></div></div>
-          <h4 class="project-label">Description</h4>
-          <p class="project-description">매장 방문부터 모바일 주문·NFC 결제까지의 흐름을 구현한 Android·Backend 애플리케이션</p>
-          <h4 class="project-label">Contributions</h4>
+          <div class="entry-head">
+            <div>
+              <h3>싱싱과일 <span>매장 주문·NFC 결제 플랫폼</span></h3>
+              <p class="role">Android &amp; Backend Developer</p>
+            </div>
+            <p class="period">2025.05</p>
+          </div>
           <ul>
-            <li>매장 방문부터 주문·결제까지 하나의 흐름으로 연결하기 위해 Android와 Spring Boot 백엔드 구현을 담당</li>
-            <li>매장 내 주문 조건을 확인하기 위해 Beacon 감지와 GPS 위치 확인을 연동</li>
-            <li>모바일 결제 흐름을 검증하기 위해 Android NFC API 기반 결제 시뮬레이션 구현</li>
-            <li>화면 상태와 UI 로직의 책임을 분리하기 위해 XML UI와 ViewModel 기반 MVVM 구조 적용</li>
-            <li>주문 데이터를 서버에서 관리하고 배포까지 확인하기 위해 Spring Boot·MyBatis 백엔드를 개발해 AWS EC2에 배포</li>
+            <li>비콘 감지와 GPS 위치 확인을 연동해 매장 내 모바일 주문 흐름을 구현했습니다.</li>
+            <li>Android NFC API를 활용해 결제 시뮬레이션을 개발했습니다.</li>
+            <li>XML UI와 ViewModel을 이용한 MVVM 구조를 적용했습니다.</li>
+            <li>Spring Boot와 MyBatis 기반 백엔드를 개발하고 AWS EC2에 배포했습니다.</li>
           </ul>
-          <h4 class="project-label project-tech-heading">Tech</h4>
-          <p class="project-tech-list">Android, XML, ViewModel, NFC, Beacon, Spring Boot, MyBatis, AWS EC2</p>
         </article>
 
         <article class="project">
-          <div class="project-head"><div class="project-title-row"><h3>따숨</h3><p class="period">2025.04 — 2025.05</p></div></div>
-          <h4 class="project-label">Description</h4>
-          <p class="project-description">환경 공공데이터를 활용해 친환경 실천을 돕는 Android 애플리케이션</p>
-          <h4 class="project-label">Contributions</h4>
+          <div class="entry-head">
+            <div>
+              <h3>따숨 <span>환경 공공데이터 활용 친환경 실천 Android 앱</span></h3>
+              <p class="role">Android Developer</p>
+            </div>
+            <p class="period">2025.04 — 2025.05</p>
+          </div>
           <ul>
-            <li>환경 공공데이터를 실제 행동으로 연결하는 서비스를 만들기 위해 Android 구현을 담당하고 친환경 보일러 추천·AI 컨설팅 챗봇·커뮤니티·자가 검침 기능 개발에 참여</li>
-            <li>여러 기능의 의존성과 재사용 범위를 관리하기 위해 멀티모듈 구조로 모듈 간 책임 분리</li>
-            <li>화면 상태와 의존성 관리를 일관되게 유지하기 위해 Hilt와 MVVM 기반 구조 적용</li>
+            <li>환경부 공공데이터를 활용한 친환경 실천 유도 Android 앱을 개발했습니다.</li>
+            <li>사용량 기반 친환경 보일러 추천, AI 컨설팅 챗봇, 환경 실천 커뮤니티, 자가 사용량 검침 기능을 포함한 서비스에 참여했습니다.</li>
+            <li>멀티모듈 구조로 모듈 간 의존성과 코드 재사용을 관리했습니다.</li>
+            <li>Hilt 의존성 주입과 MVVM 기반 ViewModel 구조를 적용했습니다.</li>
           </ul>
-          <h4 class="project-label project-tech-heading">Tech</h4>
-          <p class="project-tech-list">Kotlin, Android, Hilt, MVVM, Multi-module</p>
         </article>
 
         <article class="project">
-          <div class="project-head"><div class="project-title-row"><h3>AI 심리 상담</h3><p class="period">2024.07</p></div></div>
-          <h4 class="project-label">Description</h4>
-          <p class="project-description">AI가 상담을 진행하고 결과를 제공하는 모바일 상담 애플리케이션</p>
-          <h4 class="project-label">Contributions</h4>
+          <div class="entry-head">
+            <div>
+              <h3>AI 심리 상담사 앱 <span>AI 해커톤</span></h3>
+              <p class="role">Android Developer</p>
+            </div>
+            <p class="period">2024.07.15 — 2024.07.26</p>
+          </div>
           <ul>
-            <li>상담 흐름이 끊기지 않도록 Android 채팅 UI와 상담 진행에 필요한 비즈니스 로직 구현을 담당</li>
+            <li>AI가 상담을 진행하고 상담 결과를 제공하는 모바일 앱을 개발했습니다.</li>
+            <li>Android 채팅 UI와 비즈니스 로직을 담당했습니다.</li>
           </ul>
-          <h4 class="project-label project-tech-heading">Tech</h4>
-          <p class="project-tech-list">Kotlin, Android, Chat UI</p>
         </article>
 
         <article class="project">
-          <div class="project-head"><div class="project-title-row"><h3>카본 풋풋</h3><p class="period">2023.09 — 2023.11</p></div></div>
-          <h4 class="project-label">Description</h4>
-          <p class="project-description">음식 사진을 촬영하면 탄소발자국 정보를 제공하는 온디바이스 AI Android 애플리케이션</p>
-          <h4 class="project-label">Contributions</h4>
+          <div class="entry-head">
+            <div>
+              <h3>카본 풋풋 <span>졸업 프로젝트</span></h3>
+              <p class="role">Android Frontend</p>
+            </div>
+            <p class="period">2023.09.04 — 2023.11.16</p>
+          </div>
           <ul>
-            <li>촬영부터 탄소발자국 확인까지 모바일 흐름을 완성하기 위해 Android 프론트엔드 전반의 화면과 기능 구현을 담당</li>
-            <li>팀 간 화면·데이터 연결 지점을 명확히 하기 위해 Figma로 UI, 화면 흐름, 데이터 방향과 API 연동 지점 시각화</li>
-            <li>비대면 협업에서도 개발 진행 상황을 맞추기 위해 정기 화상회의를 진행하며 Android 파트를 완성</li>
+            <li>음식 사진을 촬영하면 음식의 탄소 발자국을 알려주는 온디바이스 AI Android 앱을 개발했습니다.</li>
+            <li>Android 프론트엔드 전반을 담당했습니다.</li>
+            <li>Figma로 UI, 화면 흐름, 데이터 방향과 API 연동 지점을 시각화했습니다.</li>
+            <li>비대면 환경에서 정기 화상회의를 진행하며 Android 파트를 완성했습니다.</li>
           </ul>
-          <h4 class="project-label project-tech-heading">Tech</h4>
-          <p class="project-tech-list">Android, Figma, On-device AI</p>
         </article>
       </div>
     </section>
 
     <section class="resume-section">
-      <h2>Certifications<br />&amp; Language</h2>
+      <h2>Certifications &amp; Language</h2>
       <div class="section-body simple-list">
-        <div><strong>TOEIC Speaking IH (140)</strong><span>ETS · 2026.09.06</span></div>
+        <div><strong>TOEIC Speaking IH (140)</strong><span>ETS · 2026.09.06 · 유효기간 2028.09.06</span></div>
         <div><strong>한국사능력검정시험 2급</strong><span>국사편찬위원회 · 2026.06.05</span></div>
         <div><strong>SQLD</strong><span>한국데이터산업진흥원 · 2025.09.19</span></div>
         <div><strong>정보처리기사</strong><span>한국산업인력공단 · 2024.06.18</span></div>
@@ -255,7 +268,7 @@
     </section>
 
     <section class="resume-section">
-      <h2>Awards<br />&amp; Activities</h2>
+      <h2>Awards &amp; Activities</h2>
       <div class="section-body">
         <article class="entry">
           <div class="entry-head">
