@@ -27,6 +27,8 @@
   --font-size-summary: 16px;
   --font-size-eyebrow: 14px;
   --font-size-contact: 13px;
+  --font-size-contact-label: 14px;
+  --contact-label-width: 52px;
   --font-size-contact-icon: 17px;
   --contact-item-gap: 10px;
   --font-size-body: 15px;
@@ -628,49 +630,6 @@ h1 {
   }
 }
 
-/* Contact meta component */
-.contact-item {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: var(--contact-item-gap);
-  color: var(--color-text-muted);
-  font-size: var(--font-size-contact);
-  line-height: 1.4;
-}
-
-.contact-item:hover {
-  color: var(--color-primary-strong);
-  text-decoration: none;
-}
-
-.contact-icon {
-  flex: 0 0 auto;
-  width: var(--font-size-contact-icon);
-  height: var(--font-size-contact-icon);
-  fill: none;
-  stroke: var(--color-primary);
-  stroke-width: 2.2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-@media (max-width: 760px) {
-  :root {
-    --font-size-eyebrow: 13px;
-    --font-size-contact: 12.5px;
-    --font-size-contact-icon: 13.5px;
-  }
-}
-
-@media print {
-  :root {
-    --font-size-eyebrow: 9pt;
-    --font-size-contact: 8pt;
-    --font-size-contact-icon: 9pt;
-  }
-}
-
 
 /* Hero balance refinement */
 .hero {
@@ -692,4 +651,51 @@ h1 {
   
     align-items: flex-start;
     justify-self: start;}
+}
+
+
+/* Contact label component */
+.contact-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: var(--contact-item-gap);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-contact);
+  line-height: 1.4;
+}
+
+.contact-item:hover {
+  color: var(--color-primary-strong);
+  text-decoration: none;
+}
+
+.contact-label {
+  flex: 0 0 var(--contact-label-width);
+  color: var(--color-primary);
+  font-size: var(--font-size-contact-label);
+  font-weight: var(--font-weight-extra-bold);
+  text-align: right;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --font-size-contact-label: 13.5px;
+    --contact-label-width: 50px;
+  }
+
+  .contact-item {
+    justify-content: flex-start;
+  }
+
+  .contact-label {
+    text-align: left;
+  }
+}
+
+@media print {
+  :root {
+    --font-size-contact-label: 9pt;
+    --contact-label-width: 12mm;
+  }
 }
