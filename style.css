@@ -31,9 +31,10 @@
   --font-size-project-title: 23px;
   --font-size-skill-title: 18px;
   --font-size-accent: 15px;
-  --font-size-date: 13px;
+  --font-size-date: 14px;
   --font-size-meta: 15px;
   --font-size-credential-title: 16px;
+  --font-size-credential-meta: 16px;
 
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -445,7 +446,7 @@ h1 {
 
 .simple-list span {
   color: var(--color-text-muted);
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-credential-meta);
   text-align: right;
 }
 
@@ -467,8 +468,9 @@ h1 {
     --font-size-project-title: 21px;
     --font-size-skill-title: 17px;
     --font-size-accent: 14px;
-    --font-size-date: 13px;
+    --font-size-date: 14px;
     --font-size-meta: 14px;
+    --font-size-credential-meta: 15px;
   }
 
   body {
@@ -545,9 +547,10 @@ h1 {
     --font-size-project-title: 12pt;
     --font-size-skill-title: 9.5pt;
     --font-size-accent: 9pt;
-    --font-size-date: 8.5pt;
+    --font-size-date: 9.5pt;
     --font-size-meta: 9pt;
     --font-size-credential-title: 9pt;
+    --font-size-credential-meta: 9.5pt;
 
     --section-label-width: 28mm;
     --section-column-gap: 6mm;
@@ -614,5 +617,37 @@ h1 {
   a {
     color: var(--color-primary) !important;
     text-decoration: none !important;
+  }
+}
+
+
+/* Contact meta component */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.contact-item:hover {
+  color: var(--color-primary-strong);
+  text-decoration: none;
+}
+
+.contact-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: var(--font-weight-extra-bold);
+  letter-spacing: 0.02em;
+}
+
+@media print {
+  .contact-key {
+    width: 4mm;
+    font-size: 8pt;
   }
 }
