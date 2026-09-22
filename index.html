@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="윤성준 Software Developer 이력서" />
   <title>윤성준 | Software Developer</title>
-  <link rel="stylesheet" href="./style.css?v=20260922-project-names" />
+  <link rel="stylesheet" href="./style.css?v=20260922-contribution-storyline" />
 </head>
 <body>
   <header class="site-header">
@@ -131,14 +131,14 @@
           <p class="project-description">사내 공용 자전거의 신청, 관리자 승인, 이용, 반납을 관리하는 Android 앱</p>
           <h4 class="project-label">Contributions</h4>
           <ul>
-            <li>Android 전체 구조와 API · 데이터 계약, 개발 환경 및 테스트 구조를 설계했습니다.</li>
-            <li>Room을 단일 데이터 원본으로 사용하고 WorkManager 기반 오프라인 반납 재전송을 구성했습니다.</li>
-            <li>PostgreSQL exclusion constraint로 활성 예약의 시간 충돌을 방어하고 UUID 멱등키와 advisory lock으로 네트워크 재시도에 따른 중복 요청을 방어했습니다.</li>
-            <li>Transactional Outbox를 적용해 예약 상태 변경과 알림 이벤트의 정합성을 관리했습니다.</li>
-            <li>JWT와 Refresh Token Rotation을 적용하고 역할 및 예약 소유권을 서버에서 검증하도록 구성했습니다.</li>
+            <li>화면 상태와 이벤트 흐름을 일관되게 관리하기 위해 UiState · Action · Effect를 Contract로 정의한 MVI 기반 단방향 데이터 흐름(UDF)을 구성했습니다.</li>
+            <li>오프라인 상태에서도 반납 요청이 누락되지 않도록 Room을 단일 데이터 원본으로 사용하고 WorkManager로 네트워크 복구 후 재전송하도록 구성했습니다.</li>
+            <li>중복 예약과 재시도에 따른 중복 처리를 방지하기 위해 PostgreSQL exclusion constraint, UUID 멱등키와 advisory lock을 적용했습니다.</li>
+            <li>예약 상태 변경과 알림 이벤트가 어긋나지 않도록 Transactional Outbox를 적용했습니다.</li>
+            <li>사용자 역할과 예약 소유권을 서버에서 검증하고 JWT · Refresh Token Rotation으로 인증 흐름을 구성했습니다.</li>
           </ul>
           <h4 class="project-label project-tech-heading">Tech</h4>
-          <div class="project-tech-list"><span>Kotlin</span><span>Jetpack Compose</span><span>Room</span><span>WorkManager</span><span>Ktor</span><span>Spring Boot</span><span>PostgreSQL</span><span>JWT</span></div>
+          <div class="project-tech-list"><span>Kotlin</span><span>Jetpack Compose</span><span>MVI</span><span>UDF</span><span>Room</span><span>WorkManager</span><span>Ktor</span><span>Spring Boot</span><span>Spring Data JPA</span><span>PostgreSQL</span><span>JWT</span><span>Transactional Outbox</span></div>
         </article>
 
         <article class="project">
@@ -152,13 +152,12 @@
           <p class="project-description">로그인 없이 글과 댓글을 작성하는 익명 웹 게시판</p>
           <h4 class="project-label">Contributions</h4>
           <ul>
-            <li>익명 세션 ID를 쿠키로 발급하고, 글 · 댓글 작성 시 해당 ID를 소유자 값으로 저장한 뒤 수정 · 삭제 요청마다 서버에서 두 값을 비교해 권한을 검증했습니다.</li>
-            <li>Controller, Service, Repository, DTO의 책임을 분리하고 Entity를 API 계약에 직접 노출하지 않도록 구성했습니다.</li>
-            <li>조회수는 단일 UPDATE 쿼리로 원자 증가시키고, 게시글 · 댓글 수정과 좋아요 요청에는 비관적 잠금과 unique constraint를 적용해 동시 요청의 중복과 충돌을 방어했습니다.</li>
-            <li>게시글 목록의 좋아요 · 댓글 관련 반복 조회를 줄이기 위해 ID 목록을 모아 집계 쿼리로 조회하도록 구성했습니다.</li>
-            <li>React에서는 reducer 기반 상태 관리와 API 레이어 분리로 화면 상태와 데이터 요청 로직을 분리했습니다.</li>
-            <li>GitHub-hosted runner에서 PostgreSQL 16과 애플리케이션을 함께 실행해 200 VU, 3분 부하 테스트를 수행했습니다.</li>
-            <li>총 HTTP 요청 75,336건, 처리량 357.16 req/s, 오류율 0%, HTTP p95 52.89ms를 확인하고 SQL 정합성 검사를 수행했습니다.</li>
+            <li>로그인 없이도 작성자 소유권을 보장하기 위해 쿠키 기반 익명 세션을 사용하고, 작성 시 저장한 세션 ID와 요청자의 세션 ID를 서버에서 비교해 수정 · 삭제 권한을 검증했습니다.</li>
+            <li>기능이 늘어나도 검증 로직과 데이터 접근 책임이 섞이지 않도록 Spring Data JPA 기반 Repository를 구성하고 Controller · Service · DTO의 책임을 분리했습니다.</li>
+            <li>동시 요청에서도 조회수와 좋아요 데이터의 정합성을 유지하기 위해 원자적 UPDATE, Pessimistic Lock과 unique constraint를 적용했습니다.</li>
+            <li>게시글마다 반복되는 좋아요 · 댓글 조회를 줄이기 위해 대상 ID를 모아 집계 쿼리로 조회했습니다.</li>
+            <li>화면 상태와 API 요청 로직의 변경 영향을 줄이기 위해 React reducer 기반 상태 관리와 API 레이어를 분리했습니다.</li>
+            <li>동시 요청 환경의 성능과 데이터 정합성을 검증하기 위해 k6 200 VU · 3분 부하 테스트와 SQL 정합성 검사를 수행해 오류율 0%, HTTP p95 52.89ms를 확인했습니다.</li>
           </ul>
           <h4 class="project-label project-tech-heading">Tech</h4>
           <div class="project-tech-list"><span>Java</span><span>Spring Boot</span><span>Spring Data JPA</span><span>PostgreSQL</span><span>React</span><span>TypeScript</span><span>k6</span></div>
@@ -175,12 +174,12 @@
           <p class="project-description">EC2 서버의 CPU, 메모리, 디스크, 네트워크 등 서버 메트릭을 조회하고 시각화하는 Android 앱</p>
           <h4 class="project-label">Contributions</h4>
           <ul>
-            <li>feature, core, data 모듈을 분리한 멀티모듈 구조를 설계했습니다.</li>
-            <li>Coroutines async/await를 활용해 여러 API 호출을 병렬 처리했습니다.</li>
-            <li>Canvas API 기반 서버 메트릭 차트를 직접 구현하고 Navigation 기반 화면 흐름을 구성했습니다.</li>
+            <li>기능별 feature 모듈과 core · data 모듈을 분리하고 공통 Gradle 설정은 build-logic의 Convention Plugin으로 관리하는 멀티모듈 구조를 구성했습니다.</li>
+            <li>여러 서버 지표 API를 Coroutines async/await로 병렬 처리해 처리 시간을 324ms에서 140ms로 단축했습니다.</li>
+            <li>서버 지표별 특성을 직관적으로 보여주기 위해 Canvas API로 CPU · 메모리 · 디스크 · 네트워크 차트를 직접 구현하고 Navigation으로 화면 흐름을 구성했습니다.</li>
           </ul>
           <h4 class="project-label project-tech-heading">Tech</h4>
-          <div class="project-tech-list"><span>Kotlin</span><span>Jetpack Compose</span><span>Coroutines</span><span>Canvas</span><span>Navigation</span></div>
+          <div class="project-tech-list"><span>Kotlin</span><span>Jetpack Compose</span><span>Hilt</span><span>Retrofit2</span><span>Coroutines</span><span>Flow</span><span>Multi-Module</span><span>Gradle Convention Plugin</span><span>Canvas</span><span>Navigation</span></div>
         </article>
 
         <article class="project">
@@ -194,10 +193,10 @@
           <p class="project-description">얼굴 인식과 관상 분석을 활용해 사용자를 매칭하고 실시간 1대1 채팅을 제공하는 Android 앱</p>
           <h4 class="project-label">Contributions</h4>
           <ul>
-            <li>MVVM과 Repository 패턴을 기반으로 Android 코드베이스와 데이터 계층을 구성했습니다.</li>
-            <li>WebSocket과 OkHttp를 활용해 실시간 메시지 송수신을 구현했습니다.</li>
-            <li>DataStore를 활용해 로그인 세션과 토큰을 관리했습니다.</li>
-            <li>Paging3를 적용해 채팅 이력을 페이지 단위로 불러오도록 구성했습니다.</li>
+            <li>Jetpack Compose로 화면을 구현하고 MVVM과 Repository 패턴으로 UI 상태와 데이터 처리 책임을 분리했습니다.</li>
+            <li>실시간 1대1 채팅을 제공하기 위해 WebSocket과 OkHttp로 메시지 송수신을 구현했습니다.</li>
+            <li>로그인 상태와 인증 정보를 기기에 유지하기 위해 DataStore로 세션과 토큰을 관리했습니다.</li>
+            <li>채팅 이력을 필요한 범위만 불러오도록 Paging3 기반 페이지 단위 조회를 구현했습니다.</li>
           </ul>
           <h4 class="project-label project-tech-heading">Tech</h4>
           <div class="project-tech-list"><span>Kotlin</span><span>Jetpack Compose</span><span>MVVM</span><span>WebSocket</span><span>OkHttp</span><span>DataStore</span><span>Paging3</span><span>ML Kit</span></div>
@@ -214,13 +213,13 @@
           <p class="project-description">비콘 · GPS 기반 매장 주문과 Android NFC 결제 시뮬레이션을 제공하는 Android · Backend 플랫폼</p>
           <h4 class="project-label">Contributions</h4>
           <ul>
-            <li>비콘 감지와 GPS 위치 확인을 연동해 매장 내 모바일 주문 흐름을 구현했습니다.</li>
-            <li>Android NFC API를 활용해 결제 시뮬레이션을 개발했습니다.</li>
-            <li>XML UI와 ViewModel을 이용한 MVVM 구조를 적용했습니다.</li>
-            <li>Spring Boot와 MyBatis 기반 백엔드를 개발하고 데이터 조회 · 저장을 위한 SQL 쿼리를 설계한 뒤 AWS EC2에 배포했습니다.</li>
+            <li>매장 내 사용자인지 확인하기 위해 비콘 감지와 GPS 위치 확인을 연동해 모바일 주문 흐름을 구현했습니다.</li>
+            <li>모바일에서 결제 과정을 재현하기 위해 Android NFC API 기반 결제 시뮬레이션을 구현했습니다.</li>
+            <li>화면 상태와 UI 로직을 분리하기 위해 XML UI와 ViewModel 기반 MVVM 구조를 적용했습니다.</li>
+            <li>주문 · 상품 · 사용자 데이터를 처리하기 위해 Spring Boot와 MyBatis 기반 백엔드를 구현하고 SQL 쿼리를 설계한 뒤 AWS EC2에 배포했습니다.</li>
           </ul>
           <h4 class="project-label project-tech-heading">Tech</h4>
-          <div class="project-tech-list"><span>Kotlin</span><span>XML</span><span>MVVM</span><span>Beacon</span><span>GPS</span><span>NFC</span><span>Spring Boot</span><span>MyBatis</span><span>AWS EC2</span></div>
+          <div class="project-tech-list"><span>Kotlin</span><span>Java</span><span>XML</span><span>MVVM</span><span>Beacon</span><span>GPS</span><span>NFC</span><span>Spring Boot</span><span>MyBatis</span><span>AWS EC2</span></div>
         </article>
 
         <article class="project">
@@ -234,12 +233,12 @@
           <p class="project-description">환경부 공공데이터를 활용한 친환경 실천 유도 Android 앱</p>
           <h4 class="project-label">Contributions</h4>
           <ul>
-            <li>사용량 기반 친환경 보일러 추천, AI 컨설팅 챗봇, 환경 실천 커뮤니티, 자가 사용량 검침 기능을 포함한 서비스에 참여했습니다.</li>
-            <li>멀티모듈 구조로 모듈 간 의존성과 코드 재사용을 관리했습니다.</li>
-            <li>Hilt 의존성 주입과 MVVM 기반 ViewModel 구조를 적용했습니다.</li>
+            <li>사용자들이 환경 실천 정보를 공유할 수 있도록 앱 내 커뮤니티 기능의 Android 화면과 상태 처리를 구현했습니다.</li>
+            <li>데이터와 비즈니스 로직의 책임을 분리하기 위해 data · domain 등 레이어 단위로 모듈을 분리했습니다.</li>
+            <li>모듈 간 의존성과 화면 상태를 관리하기 위해 Hilt 의존성 주입과 MVVM 기반 ViewModel 구조를 적용했습니다.</li>
           </ul>
           <h4 class="project-label project-tech-heading">Tech</h4>
-          <div class="project-tech-list"><span>Java</span><span>XML</span><span>ViewModel</span><span>Hilt</span><span>Multi-Module</span></div>
+          <div class="project-tech-list"><span>Java</span><span>XML</span><span>MVVM</span><span>ViewModel</span><span>Hilt</span><span>Multi-Module</span></div>
         </article>
 
         <article class="project">
