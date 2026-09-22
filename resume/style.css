@@ -40,6 +40,7 @@
   --font-size-date: 14px;
   --font-size-meta: 15px;
   --font-size-credential-title: 16px;
+  --font-size-project-tech: 12px;
   --font-size-credential-meta: 16px;
 
   --font-weight-regular: 400;
@@ -414,12 +415,31 @@ h1 {
   line-height: var(--line-height-heading);
 }
 
-.project-description,
-.project-tech-list {
+.project-description {
   margin: 0;
   color: var(--color-text-body);
   font-size: var(--font-size-body);
   line-height: var(--line-height-project-body);
+}
+
+.project-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.project-tech-list span {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border: 1px solid var(--color-line);
+  border-radius: 3px;
+  color: var(--color-text-muted);
+  background: var(--color-paper);
+  font-size: var(--font-size-project-tech);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.45;
 }
 
 .project ul {
@@ -481,6 +501,7 @@ h1 {
     --font-size-date: 14px;
     --font-size-meta: 14px;
     --font-size-credential-meta: 15px;
+    --font-size-project-tech: 11px;
   }
 
   body {
@@ -561,6 +582,7 @@ h1 {
     --font-size-meta: 9pt;
     --font-size-credential-title: 9pt;
     --font-size-credential-meta: 9.5pt;
+    --font-size-project-tech: 8pt;
 
     --section-label-width: 28mm;
     --section-column-gap: 6mm;
@@ -619,8 +641,7 @@ h1 {
     height: 16px;
   }
 
-  .project-description,
-  .project-tech-list {
+  .project-description {
     line-height: 1.45;
   }
 
