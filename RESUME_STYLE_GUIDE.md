@@ -18,7 +18,10 @@
 - `--font-size-skill-title`: Android / Backend & Data / Infra & Tools
 - `--font-size-accent`: 학사 / 인턴 / Description / Contributions / Tech
 - `--font-size-date`: 기간
-- `--font-size-meta`: GitHub / 자격증 발급기관·날짜
+- `--font-size-meta`: 자격증 발급기관·날짜
+- `--font-size-contact`: 상단 연락처 텍스트
+- `--font-size-contact-icon`: 상단 연락처 아이콘
+- `--font-size-eyebrow`: SOFTWARE DEVELOPER 라벨
 
 ## 3. 주요 Layout Token
 
