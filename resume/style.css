@@ -532,16 +532,6 @@ li::before {
   font-weight: 700;
 }
 
-.project .tech-line {
-  margin-top: 8px;
-  color: #626a66;
-  font-size: 13.5px;
-}
-
-.project .tech-line strong {
-  margin-right: 5px;
-  color: #343b37;
-}
 
 @media (max-width: 760px) {
   .projects-section {
@@ -581,10 +571,25 @@ li::before {
   .project li {
     margin: 0.9mm 0;
     line-height: 1.5;
-  }
+  }}
 
-  .project .tech-line {
-    margin-top: 1.4mm;
-    font-size: 8.3pt;
+
+/* Project column spacing refinement */
+.projects-section {
+  grid-template-columns: 125px minmax(0, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 760px) {
+  .projects-section {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+@media print {
+  .projects-section {
+    grid-template-columns: 27mm minmax(0, 1fr);
+    gap: 6mm;
   }
 }
