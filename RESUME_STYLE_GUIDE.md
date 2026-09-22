@@ -88,3 +88,11 @@ Projects / Bike-book처럼 글자 크기가 다른 두 제목은 top 좌표만 �
 
 "초록색 보조 텍스트 전체 크기 변경"
 → `--font-size-accent`만 변경.
+
+
+## 8. Hero / Contact
+
+- `--font-size-contact`: 연락처 텍스트 크기
+- `--font-size-contact-icon`: 연락처 아이콘 크기
+- `.hero`: 소개문과 연락처의 2컬럼 배치
+- `.summary`: 소개문 최대 폭

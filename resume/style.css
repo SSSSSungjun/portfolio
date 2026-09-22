@@ -27,7 +27,7 @@
   --font-size-summary: 16px;
   --font-size-eyebrow: 14px;
   --font-size-contact: 13px;
-  --font-size-contact-icon: 14px;
+  --font-size-contact-icon: 17px;
   --font-size-body: 15px;
   --font-size-section-title: 16px;
   --font-size-item-title: 21px;
@@ -180,7 +180,7 @@ li::before {
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: var(--space-16);
+  gap: 34px;
   align-items: end;
   padding-bottom: var(--space-15);
   border-bottom: 2px solid var(--color-primary);
@@ -203,7 +203,7 @@ h1 {
 }
 
 .summary {
-  max-width: 680px;
+  max-width: 620px;
   margin-bottom: 0;
   color: #3f4a45;
   font-size: var(--font-size-summary);
@@ -213,7 +213,7 @@ h1 {
 .hero-meta {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: var(--space-2);
   padding-bottom: 3px;
   color: var(--color-text-muted);
@@ -644,7 +644,7 @@ h1 {
   height: var(--font-size-contact-icon);
   fill: none;
   stroke: var(--color-primary);
-  stroke-width: 1.8;
+  stroke-width: 2.2;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -662,5 +662,26 @@ h1 {
     --font-size-eyebrow: 9pt;
     --font-size-contact: 8pt;
     --font-size-contact-icon: 9pt;
+  }
+}
+
+
+/* Hero balance refinement */
+.hero {
+  grid-template-columns: minmax(0, 1fr) 210px;
+}
+
+.hero-meta {
+  justify-self: start;
+  padding-left: 4px;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-meta {
+    padding-left: 0;
   }
 }
