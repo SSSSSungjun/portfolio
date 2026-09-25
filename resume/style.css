@@ -727,10 +727,24 @@ h1 {
 }
 
 
-.education-status {
-  color: var(--color-text-muted);
+
+
+.education-status .role {
+  color: var(--color-primary);
 }
 
-.education-status .gpa {
+.gpa-line {
+  margin: 2px 0 0;
+  font-size: var(--font-size-accent);
+  line-height: 1.45;
+}
+
+.gpa-label {
   color: var(--color-primary);
+  font-weight: var(--font-weight-regular);
+}
+
+.gpa-score {
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-regular);
 }
