@@ -725,3 +725,12 @@ h1 {
     --contact-label-width: 12mm;
   }
 }
+
+
+.education-status {
+  color: var(--color-text-muted);
+}
+
+.education-status .gpa {
+  color: var(--color-primary);
+}
